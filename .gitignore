@@ -1,0 +1,6 @@
+**/node_modules/**
+dump.rdb
+coverage
+test
+.nyc_output
+.Ds_Store
