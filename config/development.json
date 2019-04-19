@@ -2,7 +2,7 @@
   "host": "localhost",
   "PORT": 3344,
   "url": "http://localhost:3344",
-  "db": "mongodb://localhost/nps",
+  "db": "mongodb://localhost/pro1",
   "corsAllowedDomains": "*",
   "tokenSecret": "f@1edszlCSAy5%ÃXCVr623gjmkmslcmš21%^2scb2",
   "tokenPrefix": "Bearer",

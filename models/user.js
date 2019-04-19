@@ -28,13 +28,13 @@ const UserSchema = Schema({
   password: {
     type: String
   },
-  name: {
+  firstName: {
     type: String,
     trim: true
   },
-  account: {
-    type: Schema.Types.ObjectId,
-    ref: 'Account'
+  lastName: {
+    type: String,
+    trim: true
   },
   verificationToken: {
     type: String

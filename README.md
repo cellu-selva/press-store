@@ -12,12 +12,11 @@
 1. MongoDB + Mongoose
 2. NodeJS + Express
 3. Redis
-4. RabbitMQ (v3.7.10)
 5. Elastic Search
 
 #### MongoDB
 
-You need MongoDB v3.0 installed in your machine. In Local environment, `nps` database will be created in MongoDB when the app server starts running.
+You need MongoDB v3.0 installed in your machine. In Local environment, `pro1` database will be created in MongoDB when the app server starts running.
 
 To install specific version of mongodb
 
