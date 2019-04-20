@@ -24,7 +24,7 @@ app.post('/sessions/', loginHandler)
 
 app.delete('/sessions/', authenticate, deleteSession)
 
-app.post('/users/', authenticate, isAdmin, createUserHandler)
+app.post('/users/', createUserHandler)
 
 app.put('/users/:id', authenticate, isAdmin,  editUserHandler)
 

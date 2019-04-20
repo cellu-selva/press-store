@@ -50,19 +50,6 @@ const UserSchema = Schema({
   verifiedOn: {
     type: Date
   },
-  invitationStatus: {
-    type: String,
-    // normal === User signed up
-    enum: ['normal', 'pending', 'registered'],
-    default: 'normal'
-  },
-  invitedBy: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  invitationToken: {
-    type: String
-  },
   lastLoggedIn: {
     type: Date,
     default: new Date()

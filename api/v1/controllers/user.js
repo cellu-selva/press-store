@@ -115,25 +115,26 @@ class UserController {
       let user = await User.findOne(condition)
       if (user) {
         return __.send(res, 409, 'This email address is already in use')
-      }
+      }console.log(body.password)
       user = new User({
-        name: body.name.trim(),
-        email: body.email.trim().toLowerCase(),
-        invitationStatus: 'pending',
-        invitedBy: req.user.get('_id')
+        firstName: body.firstName.trim(),
+        lastName: body.lastName.trim(),
+        email: body.email.trim().toLowerCase()
       })
+      user.password = await user.generateHash(body.password)
+      const name = `${user.firstName} ${user.lastName}`
       user.invitationToken = Auth.generateAuthToken(user._id)
       await user.save()
       let mailOptions = {
         to: user.email,
         subject: 'Welcome',
-        html: 'Welcome, You\'re invited by ' + req.user.name + '. Click on the link below to activate your account.<br/><br/><br/><br/> '
+        html: 'Welcome, You\'re invited by ' + name + '. Click on the link below to activate your account.<br/><br/><br/><br/> '
       }
       mailOptions.html += config.get('url') + '/v1/users/' + user.invitationToken + '/confirm'
       queue.createJob('sendMail', mailOptions)
       let userData = {
         _id: user._id,
-        name: user.name,
+        name: name,
         email: user.email,
         isActive: user.isActive,
         invitationStatus: user.invitationStatus
@@ -168,7 +169,8 @@ class UserController {
       }
       let userData = {
         _id: user._id,
-        name: user.name,
+        firstName: user.firstName,
+        lastName: body.lastName.trim(),
         email: user.email,
         isActive: user.isActive,
         invitationStatus: user.invitationStatus
