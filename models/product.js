@@ -10,8 +10,8 @@ const ProductSchema = Schema({
     },
     code: {
       type: String,
-      required: true,
-      trim: true,
+      // required: true,
+      // trim: true,
       lowercase: true
     },
     price: {
@@ -21,7 +21,7 @@ const ProductSchema = Schema({
     },
     description: {
       type: String,
-      required: true,
+      // required: true,
       trim: true
     },
     logo: {
@@ -33,26 +33,25 @@ const ProductSchema = Schema({
       type: String,
       required: true,
       trim: true,
-      enum: ['ml', 'gram', 'liter', 'kg']
+      enum: ['ml', 'grams', 'liter', 'kg']
     },
     ingredient: {
       type: String,
-      required: true,
       trim: true
     },
     goodness: {
       type: String,
-      required: true,
+      // required: true,
       trim: true
     },
     intentions: {
       type: String,
-      required: true,
+      // required: true,
       trim: true
     },
     nutrient: {
       type: Schema.Types.Mixed,
-      required: true,
+      // required: true,
       trim: true
     },
     category: {
