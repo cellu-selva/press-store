@@ -10,5 +10,5 @@ app.get('/products/:productId', productController.getAllProduct)
 app.put('/products/:productId', auth.authenticate, admin.isAdmin, productController.updateProductById)
 app.delete('/products/:productId', auth.authenticate, admin.isAdmin, productController.deleteProductById)
 app.get('/products/category/:categoryId', productController.getProductByCategoryId)
-
+app.get('/products/category/:categoryId/product/:productId', productController.getRelatedProducts)
 module.exports = app

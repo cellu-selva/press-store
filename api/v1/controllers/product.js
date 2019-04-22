@@ -1,6 +1,6 @@
 const Product = require('./../../../models/product')
 const __ = require('../../../helpers/response')
-
+const _ = require('lodash')
 function validateProduct(data) {
 let error;
 switch(true) {
@@ -55,7 +55,7 @@ class ProductController {
     try {
       const products = await Product.find({
         isDeleted: false
-      })
+      }).lean()
       return __.success(res, products, '')
     } catch (error) {
       return __.error(res, error)
@@ -70,7 +70,7 @@ class ProductController {
       const product = await Product.findOne({
         _id: productId,
         isDeleted: false
-      })
+      }).lean()
       if(!product) {
         return __.notFound(res, `Product ${productId} not found`)
       }
@@ -85,13 +85,10 @@ class ProductController {
       if(!categoryId) {
         return __.send(res, 400, `Please enter a product category ID`)
       }
-      const product = await Product.findOne({
+      const products = await Product.find({
         category: categoryId,
         isDeleted: false
-      })
-      if(!product) {
-        return __.notFound(res, `Product ${name} not found`)
-      }
+      }).lean()
       return __.success(res, products, '')
     } catch (error) {
       return __.error(res, error)
@@ -132,7 +129,7 @@ class ProductController {
         isDeleted: false,
       }
       let update = body
-      const product = await Product.findOneAndUpdate(condition, update)
+      const product = await Product.findOneAndUpdate(condition, update).lean()
       if(!product) {
         return __.notFound(res, `Product ${productId} not found`)
       }
@@ -141,6 +138,25 @@ class ProductController {
       return __.error(res, error)
     }
 
+  }
+
+  async getRelatedProducts(req, res) {
+    try {
+      const { params: { categoryId, productId } } = req
+      if(!categoryId) {
+        return __.send(res, 400, `Please enter a product category ID`)
+      }
+      const products = await Product.find({
+        category: categoryId,
+        isDeleted: false
+      }).lean()
+      const product = _.filter(products, (prod)=> {
+        return prod._id != productId
+      })
+      return __.success(res, product, '')
+    } catch (error) {
+      __.error(res, error)
+    }
   }
 }
 
