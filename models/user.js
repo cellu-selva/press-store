@@ -60,6 +60,16 @@ const UserSchema = Schema({
   },
   deletedOn: {
     type: Date
+  },
+  addresses: {
+    primary: {
+      type: Schema.Types.ObjectId,
+      ref: 'Address'
+    },
+    secondary: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Address'
+    }] 
   }
 }, { timestamps: true })
 

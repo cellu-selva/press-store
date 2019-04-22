@@ -237,7 +237,7 @@ class UserController {
   async getUsersHandler(req, res) {
     try {
       let selectCondition = 'email phoneNumber phoneNumberExt name invitationStatus invitedBy isDeleted'
-      let users = await User.find({ isDeleted: false }).sort({ createdAt: -1 }).select(selectCondition)
+      let users = await User.find({ isDeleted: false }).sort({ createdAt: -1 }).select(selectCondition).populate('addresses.primary addresses.secondary')
       __.success(res, users)
     } catch (error) {
       __.error(res, error)

@@ -54,6 +54,7 @@ const getUser = async (userId) => {
     _id: userId,
     isDeleted: false
   }
+  // do not make this to lean
   let user = await User.findOne(condition)
   if (!user) {
     throw new Error('User not found')
@@ -89,6 +90,7 @@ class AuthClass {
       req.currentSession = session
       next()
     } catch (error) {
+      console.log(error)
       __.notAuthorized(res, 'Invalid Token')
     }
   }

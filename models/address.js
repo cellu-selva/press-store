@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const OrderSchema = Schema({
+const AddressSchema = Schema({
     name: {
         type: String,
         required: true
@@ -39,27 +39,9 @@ const OrderSchema = Schema({
     },
     deletedAt: {
       type: Date
-    },
-    addresses: {
-      primaryAddress: {
-        type: Schema.Types.ObjectId,
-        ref: 'Address'
-      },
-      secondaryAddress: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Address'
-      }] 
-    },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    },
-    product: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
     }
 
 }, { timestamps: true })
 
-const OrderModel = mongoose.model('Order', OrderSchema)
-module.exports = OrderModel
+const AddressModel = mongoose.model('Address', AddressSchema)
+module.exports = AddressModel
