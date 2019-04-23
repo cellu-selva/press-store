@@ -51,7 +51,7 @@ class ProductController {
       return __.error(res, error)
     }
   }
-  async getAllProduct(req, res) {
+  async getAllProducts(req, res) {
     try {
       const products = await Product.find({
         isDeleted: false
@@ -101,7 +101,7 @@ class ProductController {
         return __.send(res, 400, `Please enter a product ID`)
       }
       let condition = {
-        _id: params.productId,
+        _id: productId,
         isDeleted: false,
       }
       let update = {
@@ -109,11 +109,11 @@ class ProductController {
         deletedOn: new Date(),
         deletedBy: req.user
       }
-      const product = await Product.findOneAndUpdate(condition, update)
+      const product = await Product.findOneAndUpdate(condition, update, { new: true })
       if(!product) {
         return __.notFound(res, `Product ${productId} not found`)
       }
-      return __.success(res, products, 'Product deleted successfully')
+      return __.success(res, product, 'Product deleted successfully')
     } catch (error) {
       return __.error(res, error)
     }
@@ -125,15 +125,15 @@ class ProductController {
         return __.send(res, 400, `Please enter a product ID`)
       }
       let condition = {
-        _id: params.productId,
+        _id: productId,
         isDeleted: false,
       }
       let update = body
-      const product = await Product.findOneAndUpdate(condition, update).lean()
+      const product = await Product.findOneAndUpdate(condition, update, { new: true }).lean()
       if(!product) {
         return __.notFound(res, `Product ${productId} not found`)
       }
-      return __.success(res, products, 'Product deleted successfully')
+      return __.success(res, product, 'Product deleted successfully')
     } catch (error) {
       return __.error(res, error)
     }
@@ -148,8 +148,9 @@ class ProductController {
       }
       const products = await Product.find({
         category: categoryId,
-        isDeleted: false
-      }).lean()
+        isDeleted: false,
+        product: {$ne: productId}
+      }).limit(4).lean()
       const product = _.filter(products, (prod)=> {
         return prod._id != productId
       })

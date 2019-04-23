@@ -66,7 +66,7 @@ class Address {
         _id: addressId,
         isDeleted: false
       }
-      const address = await AddressModel.findOneAndUpdate(condition, body)
+      const address = await AddressModel.findOneAndUpdate(condition, body, { new: true })
       __.success(res, address, 'Address successfully updated')
     } catch (error) {
       __.error(res, error)
@@ -86,7 +86,7 @@ class Address {
       body.isDeleted = true
       body.deletedAt = new Date()
       body.deletedBy = user
-      address = await AddressModel.findOneAndUpdate(condition, body)
+      address = await AddressModel.findOneAndUpdate(condition, body, { new: true })
       if (user.addresses.primary == address._id) {
         user.addresses.primary = {}
       } else {

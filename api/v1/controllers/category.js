@@ -79,7 +79,7 @@ class CategoryController {
         deletedOn: new Date(),
         deletedBy: req.user
       }
-      const category = await Category.findOneAndUpdate(condition, update)
+      const category = await Category.findOneAndUpdate(condition, update, { new: true })
       if(!category) {
         return __.notFound(res, `category ${categoryId} not found`)
       }
@@ -99,7 +99,7 @@ class CategoryController {
         isDeleted: false,
       }
       let update = body
-      const category = await Category.findOneAndUpdate(condition, update)
+      const category = await Category.findOneAndUpdate(condition, update, { new: true })
       if(!category) {
         return __.notFound(res, `Category ${categoryId} not found`)
       }

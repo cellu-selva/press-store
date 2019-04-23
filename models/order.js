@@ -17,6 +17,10 @@ const OrderSchema = Schema({
     orderDate: {
       type: Date
     },
+    addedAt: {
+      type: Date,
+      required: true
+    },
     isDeleted: {
       type: Boolean,
       default: false
@@ -24,15 +28,9 @@ const OrderSchema = Schema({
     deletedAt: {
       type: Date
     },
-    addresses: {
-      primaryAddress: {
-        type: Schema.Types.ObjectId,
-        ref: 'Address'
-      },
-      secondaryAddress: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Address'
-      }] 
+    address: {
+      type: Schema.Types.ObjectId,
+      ref: 'Address'
     },
     user: {
       type: Schema.Types.ObjectId,
@@ -40,7 +38,7 @@ const OrderSchema = Schema({
     },
     product: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'Product'
     }
 
 }, { timestamps: true })
