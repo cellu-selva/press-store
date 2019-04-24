@@ -11,6 +11,10 @@ const OrderSchema = Schema({
       type: Number,
       required: true
     },
+    price: {
+      type: Number,
+      required: true
+    },
     additionalNotes: {
       type: String
     },
@@ -34,11 +38,13 @@ const OrderSchema = Schema({
     },
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
+      required:true
     },
     product: {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'Product',
+      required:true
     }
 
 }, { timestamps: true })

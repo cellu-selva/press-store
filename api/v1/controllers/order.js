@@ -5,6 +5,7 @@ const objectId = mongoose.Types.ObjectId
 
 const __ = require('../../../helpers/response')
 const OrderModel = require('./../../../models/order')
+const ProductModel = require('./../../../models/product')
 
 const validateOrder = (data) => {
   let error
@@ -15,9 +16,9 @@ const validateOrder = (data) => {
     case (!(data && data.quantity && data.quantity.constructor === Number )):
       error = new Error('Please provide quantity')
       break
-    case (!(data && data.address && objectId.isValid(data.address))):
-      error = new Error('Please provide address')
-      break
+    // case (!(data && data.address && objectId.isValid(data.address))):
+    //   error = new Error('Please provide address')
+    //   break
     case (!(data && data.user && objectId.isValid(data.user))):
       error = new Error('Please provide user')
       break
@@ -38,6 +39,11 @@ class Order {
     try {
       const { body, user } = req
       validateOrder(body)
+      const product = await ProductModel.findOne({ _id: body.product, isDeleted: false })
+      if(!product) {
+        return __.send(res, 400, 'Product not found')
+      }
+      body.price = product.price * body.quantity
       let order = new OrderModel(body)
       order.user = user._id
       order.isDeleted = false
@@ -108,11 +114,11 @@ class Order {
       if(!(userId || objectId.isValid(userId))) {
         __.send(res, 400, 'Please send user id')
       }
-      const order = await OrderModel.findOne({
+      const orders = await OrderModel.find({
         user: userId,
         isDeleted: false
       })
-      __.success(res, order, 'Order successfully fetched')
+      __.success(res, orders, 'Order successfully fetched')
     } catch (error) {
       __.error(res, error)
     }
