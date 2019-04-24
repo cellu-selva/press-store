@@ -42,8 +42,9 @@ switch(true) {
 class ProductController {
   async createProduct(req, res) {
     try {
-      const { body } = req
+      const { body, user } = req
       validateProduct(body)
+      body.createdBy = user
       let product = Product(body)
       product = await product.save()
       return __.success(res, product, '')

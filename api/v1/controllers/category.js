@@ -27,8 +27,9 @@ class CategoryController {
   
   async createCategory(req, res) {
     try {
-      const { body } = req
+      const { body, user } = req
       validateCategory(body)
+      body.createdBy = user
       let category = Category(body)
       category = await category.save()
       return __.success(res, category, '')

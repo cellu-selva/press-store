@@ -58,6 +58,10 @@ const ProductSchema = Schema({
       type: Schema.Types.ObjectId,
       ref: 'Category'
     },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
     isDeleted: {
       type: Boolean,
       default: false

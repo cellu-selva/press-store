@@ -24,6 +24,10 @@ const CategorySchema = Schema({
       required: true,
       trim: true
     },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
     isDeleted: {
       type: Boolean,
       default: false
