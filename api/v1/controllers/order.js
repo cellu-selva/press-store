@@ -75,18 +75,22 @@ class Order {
 
   async deleteOrderById(req, res) {
     try {
-      const { body, user } = req
-      if (!(body._id || objectId.isValid(body._id))) {
+      const { params: { orderId }, user } = req
+      if (!objectId.isValid(orderId)) {
         return __.send(res, 400, 'Please send order id to delete')
       }
+      let order = await OrderModel.findOne({ _id: orderId, isDeleted: false })
+      if(!order) {
+        return __.send(res, 404, 'Order not found')
+      }
       const condition = {
-        _id: body._id,
+        _id: orderId,
         isDeleted: false
       }
-      body.isDeleted = true
-      body.deletedAt = new Date()
-      body.deletedBy = user
-      const order = await OrderModel.findOneAndUpdate(condition, body, { new: true })
+      order.isDeleted = true
+      order.deletedAt = new Date()
+      order.deletedBy = user
+      order = await OrderModel.findOneAndUpdate(condition, order, { new: true })
       __.success(res, order, 'Order successfully deleted')
     } catch (error) {
       __.error(res, error)
