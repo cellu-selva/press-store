@@ -8,6 +8,9 @@ const CategorySchema = Schema({
         trim: true,
         lowercase: true
     },
+    shortDescription: {
+      type: String
+    },
     code: {
       type: String,
       required: true,
