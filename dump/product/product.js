@@ -11,85 +11,136 @@ const categories = [
     name: 'cold pressed',
     data: [
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/citrus-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/citrus.jpg",
+        "name": "CITRUS SLAP",
+        "code": "₹ 145",
+        "symbol": "₹",
+        "price": "145",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Tender Coconut Water, Orange, Pineapple, Sweetlime",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/chalko-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/chalko.jpg",
+        "name": "CHALKO",
+        "code": "₹ 135",
+        "symbol": "₹",
+        "price": "135",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Activated Charcoal, Tender Coconut Water, Ginger",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/beet-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/beet.jpg",
+        "name": "French Kiss",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Apple, Beet, Carrot, Ginger",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/punk-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/punk.jpg",
+        "name": "PUNK",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Banana Stem, Arugampul (Bermuda Grass), Wheatgrass, Spirulina, Spinach, Bael Leaves, Lemon Grass, Lemon, Coconut Oil, Cumin, Himalayan Salt",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/greeny-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/greeny.jpg",
+        "name": "GREENY",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Broccoli, Drumstick Leaves, Lettuce, Capsicum, Celery, Cucumber, Lemon, Mint, Himalayan Salt",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Jade-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Jade.jpg",
+        "name": "JADE",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Amaranth, Fenugreek, Spinach, Cucumber, Bottle Gourd, Coriander, Ginger, Mint, Lemon, Himalayan Salt",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/eden-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/eden.jpg",
+        "name": "EDEN",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Cucumber, Spinach, Bottle Gourd, Coriander, Ginger, Mint, Lemon, Himalayan Salt",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Rabb-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Rabb.jpg",
+        "name": "STONED RABBIT",
+        "code": "₹ 150",
+        "symbol": "₹",
+        "price": "150",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Carrots, Turmeric, Ginger",
+        "category": "5cbc71a01df6892eaff071b1"
       },
       {
-        logo: 'https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg',
-        name: 'wild rice party',
-        price: '100',
-        quantity: '300',
-        measuringUnit: 'ml',
-        ingredient: 'Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese',
-        category: "5cbc71a01df6892eaff071b1"
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/owl-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/owl.jpg",
+        "name": "ORANGE OWL",
+        "code": "₹ 145",
+        "symbol": "₹",
+        "price": "145",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Orange, Carrot",
+        "category": "5cbc71a01df6892eaff071b1"
+      },
+      {
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/pomo_1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/pomo_1.jpg",
+        "name": "POMO-GRENADE",
+        "code": "₹ 155",
+        "symbol": "₹",
+        "price": "155",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Tender Coconut Water, Pomegranate",
+        "category": "5cbc71a01df6892eaff071b1"
+      },
+      {
+        "logo": "https://www.pressato.in/wp-content/uploads/2019/01/charger-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/charger.jpg",
+        "name": "CHARGER",
+        "code": "₹ 145",
+        "symbol": "₹",
+        "price": "145",
+        "quantity": "300",
+        "measuringUnit": "ml",
+        "ingredient": "Watermelon, Pineapple",
+        "category": "5cbc71a01df6892eaff071b1"
       }
     ],
   },
@@ -98,6 +149,7 @@ const categories = [
     data: [
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/make-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/make.jpg",
         "name": "Make It A Habit",
         "code": "7999",
         "symbol": "₹",
@@ -109,6 +161,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/10-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/10.jpg",
         "name": "10 Day Reset",
         "code": "3999",
         "symbol": "₹",
@@ -120,6 +173,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/detox-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/detox.jpg",
         "name": "Detox Week",
         "code": "2750",
         "symbol": "₹",
@@ -131,6 +185,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/cold_07-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/cold_07.jpg",
         "name": "Cold Pressed Juices",
         "code": 1800,
         "symbol": "₹",
@@ -142,6 +197,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/smoothies-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/smoothies.jpg",
         "name": "Smoothies",
         "code": "2499",
         "symbol": "₹",
@@ -153,6 +209,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/02/1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/02/1.jpg",
         "name": "One Day Cleanse",
         "code": "999",
         "symbol": "₹",
@@ -169,6 +226,7 @@ const categories = [
     data: [
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/xoxo-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/xoxo.jpg",
         "name": "XOXO",
         "code": "135",
         "symbol": "₹",
@@ -180,6 +238,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/assassin-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/assassin.jpg",
         "name": "Assassin",
         "code": "135",
         "symbol": "₹",
@@ -191,6 +250,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/halogen-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/halogen.jpg",
         "name": "Halogen",
         "code": "135",
         "symbol": "₹",
@@ -202,6 +262,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/prob-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/prob.jpg",
         "name": "Mario",
         "code": "135",
         "symbol": "₹",
@@ -218,6 +279,7 @@ const categories = [
     data: [
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/medi-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/medi.jpg",
         "name": "Mediterranean Medley (Paneer)",
         "code": "190",
         "symbol": "₹",
@@ -229,6 +291,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/medi-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/medi.jpg",
         "name": "Mediterranean Medley (Chicken)",
         "code": "210",
         "symbol": "₹",
@@ -240,6 +303,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/medi-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/medi.jpg",
         "name": "Mediterranean Medley (Eggs)",
         "code": "200",
         "symbol": "₹",
@@ -251,6 +315,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/wild.jpg",
         "name": "Wild Rice Party (Chicken)",
         "code": "210",
         "symbol": "₹",
@@ -262,6 +327,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1.jpg",
         "name": "Farm Frenzy (Chicken)",
         "code": "210",
         "symbol": "₹",
@@ -273,6 +339,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1-1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1-1.jpg",
         "name": "Farm Frenzy (Eggs)",
         "code": "200",
         "symbol": "₹",
@@ -284,6 +351,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/wild.jpg",
         "name": "Wild Rice Party (Eggs)",
         "code": "200",
         "symbol": "₹",
@@ -295,6 +363,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/wild-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/wild.jpg",
         "name": "Wild Rice Party (Paneer)",
         "code": "190",
         "symbol": "₹",
@@ -306,6 +375,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1-1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Salad_1-1.jpg",
         "name": "Farm Frenzy (Paneer)",
         "code": "190",
         "symbol": "₹",
@@ -322,6 +392,7 @@ const categories = [
     data: [
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/swag-1-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/swag-1.jpg",
         "name": "Swag",
         "code": "200",
         "symbol": "₹",
@@ -333,6 +404,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/thalaiva-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/thalaiva.jpg",
         "name": "Thalaiva",
         "code": "245",
         "symbol": "₹",
@@ -344,6 +416,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/super-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/super.jpg",
         "name": "Super Nova",
         "code": "245",
         "symbol": "₹",
@@ -355,6 +428,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/rogue-300x300.jpeg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/rogue.jpeg",
         "name": "Rogue",
         "code": "245",
         "symbol": "₹",
@@ -366,6 +440,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/newyorker-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/newyorker.jpg",
         "name": "New Yorker",
         "code": "245",
         "symbol": "₹",
@@ -377,6 +452,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/barba-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/barba.jpg",
         "name": "Barbarian",
         "code": "200",
         "symbol": "₹",
@@ -388,6 +464,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Dyna-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/Dyna.jpg",
         "name": "Dynamight",
         "code": "245",
         "symbol": "₹",
@@ -399,6 +476,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/nuts-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/nuts.jpg",
         "name": "Naked Nuts",
         "code": "200",
         "symbol": "₹",
@@ -410,6 +488,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/big-jo-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/big-jo.jpg",
         "name": "Big Jo",
         "code": "200",
         "symbol": "₹",
@@ -421,6 +500,7 @@ const categories = [
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/first-300x300.jpg",
+        "detailedLogo": "https://www.pressato.in/wp-content/uploads/2019/01/first.jpg",
         "name": "First Knight",
         "code": "200",
         "symbol": "₹",

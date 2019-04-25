@@ -29,6 +29,11 @@ const ProductSchema = Schema({
       required: true,
       trim: true
     },
+    detailedLogo: {
+      type: String,
+      required: true,
+      trim: true
+    },
     measuringUnit: {
       type: String,
       required: true,
