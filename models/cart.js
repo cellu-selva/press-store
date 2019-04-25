@@ -1,12 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const OrderSchema = Schema({
-    isBilled: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
+const CartSchema = Schema({
     quantity: {
       type: Number,
       required: true
@@ -15,26 +10,12 @@ const OrderSchema = Schema({
       type: Number,
       required: true
     },
-    additionalNotes: {
-      type: String
-    },
-    orderDate: {
-      type: Date
-    },
-    addedAt: {
-      type: Date,
-      required: true
-    },
     isDeleted: {
       type: Boolean,
       default: false
     },
     deletedAt: {
       type: Date
-    },
-    address: {
-      type: Schema.Types.ObjectId,
-      ref: 'Address'
     },
     user: {
       type: Schema.Types.ObjectId,
@@ -49,5 +30,5 @@ const OrderSchema = Schema({
 
 }, { timestamps: true })
 
-const OrderModel = mongoose.model('Order', OrderSchema)
-module.exports = OrderModel
+const CartModel = mongoose.model('Cart', CartSchema)
+module.exports = CartModel
