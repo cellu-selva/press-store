@@ -27,13 +27,20 @@ const CouponSchema = Schema({
     type: Number,
     required: true
   },
+  totalReddemSoFar: {
+    type: Number,
+    required: true
+  },
+  isActive: {
+    type: Boolean,
+    default: true
+  },
   expiryDate: {
     type: Date,
     required: true
   },
   category: {
     type: Number,
-    required: true,
     min: 1,
     max: 5
   },

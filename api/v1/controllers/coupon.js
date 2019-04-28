@@ -5,31 +5,32 @@ const objectId = mongoose.Types.ObjectId
 
 const __ = require('../../../helpers/response')
 const CouponModel = require('./../../../models/coupon')
-
+const CartModel = require('./../../../models/cart')
+const _ = require('lodash')
 const validateCoupon = (data) => {
   let error
   switch (true) {
-    case (!(data && (data.coupon) && data.coupon.constructor === String )):
+    case (!(data && (data.coupon) && data.coupon.constructor === String)):
       error = new Error('Please provide coupon')
       break
-    case (!(data && data.discountPercentage && data.discountPercentage.constructor === Number )):
+    case (!(data && data.discountPercentage && data.discountPercentage.constructor === Number)):
       error = new Error('Please provide discountPercentage')
       break
-    case (!(data && data.maxDiscount && data.maxDiscount.constructor === Number )):
+    case (!(data && data.maxDiscount && data.maxDiscount.constructor === Number)):
       error = new Error('Please provide maxDiscount')
       break
-    case (!(data && data.minPurchaseValue && data.minPurchaseValue.constructor === Number )):
+    case (!(data && data.minPurchaseValue && data.minPurchaseValue.constructor === Number)):
       error = new Error('Please provide minPurchaseValue')
       break
-    case (!(data && data.noOfRedeem && data.noOfRedeem.constructor === Number )):
+    case (!(data && data.noOfRedeem && data.noOfRedeem.constructor === Number)):
       error = new Error('Please provide noOfRedeem')
       break
-    case (!(data && data.expiryDate && data.expiryDate.constructor === Date )):
+    case (!(data && data.expiryDate && data.expiryDate.constructor === String)):
       error = new Error('Please provide expiryDate')
       break
-    case (!(data && data.category && data.category.constructor === Number )):
-      error = new Error('Please provide category')
-      break
+    // case (!(data && data.category && data.category.constructor === Number)):
+    //   error = new Error('Please provide category')
+    //   break
   }
   if (error) {
     error.status = 400
@@ -42,7 +43,7 @@ const validateCoupon = (data) => {
 class Coupon {
   async createCoupon(req, res) {
     try {
-      const { body } = req
+      const { body, user } = req
       validateCoupon(body)
       body.createdBy = user
       let coupon = new CouponModel(body)
@@ -78,7 +79,7 @@ class Coupon {
         return __.send(res, 400, 'Please send coupon id to delete')
       }
       let coupon = await couponModel.findOne({ _id: couponId, isDeleted: false })
-      if(!coupon) {
+      if (!coupon) {
         return __.send(res, 404, 'coupon not found')
       }
       const condition = {
@@ -98,7 +99,7 @@ class Coupon {
   async getCouponById(req, res) {
     try {
       const { params: { couponId } } = req
-      if(!(couponId || objectId.isValid(couponId))) {
+      if (!(couponId || objectId.isValid(couponId))) {
         __.send(res, 400, 'Please send coupon id')
       }
       const coupon = await CouponModel.findOne({
@@ -106,6 +107,57 @@ class Coupon {
         isDeleted: false
       })
       __.success(res, coupon, 'Coupon successfully fetched')
+    } catch (error) {
+      __.error(res, error)
+    }
+  }
+
+  async applyCoupon(req, res) {
+    try {
+      const { params, user } = req
+      const { coupon } = params
+      const couponObj = await CouponModel.findOne({
+        coupon,
+        isDeleted: false
+      })
+      if (!couponObj) {
+        return __.send(res, 400, 'Coupon not found')
+      }
+      const cartData = await CartModel.find({
+        user: user._id,
+        isDeleted: false
+      })
+      if(!cartData.length) {
+       return  __.send(res, 400, 'No items found in your cart')
+      }
+      let totalPrice = 0
+      let isShippingFree = false
+      _.each(cartData, (item)=> {
+        totalPrice += item.totalPrice
+      })
+      // if(cartObj.totalPrice > MinPurchaseToAvailShippingCost) {
+      //   isShippingFree = false
+      // }
+      if (!couponObj.isActive) {
+        return __.send(res, 400, 'Coupon expired - not active')
+      }
+      if (couponObj.noOfRedeem > (couponObj.totalReddemSoFar + 1)) {
+        return __.send(res, 400, 'Coupon expired =- No of redeem')
+      }
+      if (!((new Date() < new Date(couponObj.expiryDate)))) {
+        return __.send(res, 400, 'Coupon expired - date expired')
+      }
+      if (couponObj.minPurchaseValue > totalPrice) {
+        return __.send(res, 400, `Cart value should be minimum of ${couponObj.minPurchaseValue}`)
+      } else {
+        const discountAmount = ((couponObj.discountPercentage * totalPrice) / 100)
+        if (discountAmount < couponObj.maxDiscount) {
+          totalPrice = totalPrice - discountAmount
+        } else {
+          totalPrice = totalPrice - couponObj.maxDiscount
+        }
+        return __.success(res, {totalPrice}, "coupon applied successfully")
+      }
     } catch (error) {
       __.error(res, error)
     }

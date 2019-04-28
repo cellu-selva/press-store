@@ -2,11 +2,11 @@
 
 const mongoose = require('mongoose')
 const objectId = mongoose.Types.ObjectId
-
+const _ = require('lodash')
 const __ = require('../../../helpers/response')
 const CartModel = require('../../../models/cart')
 const ProductModel = require('../../../models/product')
-
+const MinPurchaseToAvailShippingCost = 250
 const validateCart = (data) => {
   let error
   switch (true) {
@@ -34,7 +34,7 @@ class Cart {
       if(!product) {
         return __.send(res, 400, 'Product not found')
       }
-      body.price = product.price * body.quantity
+      body.totalPrice = product.price * body.quantity
       let cart = new CartModel(body)
       cart.user = user._id
       cart.isDeleted = false
@@ -108,11 +108,22 @@ class Cart {
       if(!(userId || objectId.isValid(userId))) {
         __.send(res, 400, 'Please send user id')
       }
-      const carts = await CartModel.find({
+      const cartObj = {
+        isShippingFree: false,
+        totalPrice: 0,
+
+      }
+      cartObj.carts = await CartModel.find({
         user: userId,
         isDeleted: false
       })
-      __.success(res, carts, 'Cart successfully fetched')
+      _.each(cartObj.carts, (item)=> {
+        cartObj.totalPrice += item.totalPrice
+      })
+      if(cartObj.totalPrice > MinPurchaseToAvailShippingCost) {
+        cartObj.isShippingFree = false
+      }
+      __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {
       __.error(res, error)
     }

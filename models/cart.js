@@ -6,7 +6,7 @@ const CartSchema = Schema({
       type: Number,
       required: true
     },
-    price: {
+    totalPrice: {
       type: Number,
       required: true
     },
