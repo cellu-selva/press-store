@@ -115,7 +115,8 @@ class Cart {
       }
       cartObj.carts = await CartModel.find({
         user: userId,
-        isDeleted: false
+        isDeleted: false,
+        isBilled: false
       })
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
