@@ -6,7 +6,7 @@ const OrderSchema = Schema({
       type: Number,
       required: true
     },
-    orderIds: [{
+    cartIds: [{
         type: Schema.Types.ObjectId,
         ref: 'Cart',
         required: true

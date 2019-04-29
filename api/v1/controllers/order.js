@@ -22,8 +22,8 @@ const validateOrder = (data) => {
     case (!(data && data.address && objectId.isValid(data.address))):
       error = new Error('Please provide address')
       break
-    case (!(data && data.cartIDs && !checkIfOrdersAreValid(data.cartIDs))):
-      error = new Error('Please provide orderId')
+    case (!(data && data.cartIds && !checkIfOrdersAreValid(data.cartIds))):
+      error = new Error('Please provide cart Ids')
       break
   }
   if (error) {
@@ -36,7 +36,7 @@ const validateOrder = (data) => {
 const calculatePrice = function(items) {
   let totalPrice = 0
   _.each(items, (item) => {
-    totalPrice += item.price 
+    totalPrice += item.totalPrice
   })
   return totalPrice
 }
@@ -45,8 +45,8 @@ class Order {
     try {
       const { body, user } = req
       validateOrder(body)
-      const cartItems = await CartModel.findOne({ _id: {
-        $in : body.cartIDs
+      const cartItems = await CartModel.find({ _id: {
+        $in : body.cartIds
       }, isDeleted: false })
       if(!cartItems.length) {
         return __.send(res, 400, 'cart Items not found')
@@ -56,7 +56,7 @@ class Order {
       order.user = user._id
       order.isDeleted = false
       order = await order.save()
-      __.success(res, cart, 'cart successfully created')
+      __.success(res, order, 'cart successfully created')
     } catch (error) {
       __.error(res, error)
     }
