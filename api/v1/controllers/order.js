@@ -86,7 +86,7 @@ class Order {
       const orders = await OrderModel.find({
         user: userId,
         isDeleted: false
-      })
+      }).populate('address cartIds')
       __.success(res, orders, 'Orders successfully fetched')
     } catch (error) {
       __.error(res, error)

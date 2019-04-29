@@ -276,7 +276,7 @@ class UserController {
   async currentUserHandler(req, res) {
     try {
       let user = await User.findOne({ _id: req.user._id, isDeleted: false, isVerified: true }).
-        select('email phoneNumber phoneNumberExt name account').
+        select('email phoneNumber phoneNumberExt firstName lastName account ').
         lean()
       if (!user) {
         return __.notFound(res, 'No user found')

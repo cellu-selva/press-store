@@ -119,6 +119,19 @@ class Address {
       __.error(res, error)
     }
   }
+
+  async getAddressByUser(req, res) {
+    try {
+      const { user } = req
+      const address = await AddressModel.findOne({
+        userId: user._id,
+        isDeleted: false
+      })
+      __.success(res, address, 'Address successfully fetched')
+    } catch (error) {
+      __.error(res, error)
+    }
+  }
 }
 
 
