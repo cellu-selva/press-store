@@ -6,6 +6,10 @@ const CartSchema = Schema({
       type: Number,
       required: true
     },
+    isBilled: {
+      type: Boolean,
+      default: false
+    },
     totalPrice: {
       type: Number,
       required: true

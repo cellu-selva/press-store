@@ -45,9 +45,15 @@ class Order {
     try {
       const { body, user } = req
       validateOrder(body)
-      const cartItems = await CartModel.find({ _id: {
+      const cartItems = await CartModel.update({ _id: {
         $in : body.cartIds
-      }, isDeleted: false })
+      }, isDeleted: false }, {
+        $set: {
+          isBilled: true
+        }
+      }, {
+        multi: true
+      })
       if(!cartItems.length) {
         return __.send(res, 400, 'cart Items not found')
       }
@@ -85,7 +91,8 @@ class Order {
       }
       const orders = await OrderModel.find({
         user: userId,
-        isDeleted: false
+        isDeleted: false,
+        isBilled: false
       }).populate('address cartIds')
       __.success(res, orders, 'Orders successfully fetched')
     } catch (error) {
