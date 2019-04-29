@@ -7,10 +7,10 @@ const __ = require('../../../helpers/response')
 const OrderModel = require('../../../models/order')
 const CartModel = require('../../../models/cart')
 
-const checkIfOrdersAreValid = function(orderIds) {
+const checkIfOrdersAreValid = function(cartIDs) {
   let error = false
-  _.each(orderIds, (orderId)=> {
-    if(!objectId.isValid(orderId)) {
+  _.each(cartIDs, (cartId)=> {
+    if(!objectId.isValid(cartId)) {
       error = true
     }
   })
@@ -22,7 +22,7 @@ const validateOrder = (data) => {
     case (!(data && data.address && objectId.isValid(data.address))):
       error = new Error('Please provide address')
       break
-    case (!(data && data.orderIds && !checkIfOrdersAreValid(data.orderIds))):
+    case (!(data && data.cartIDs && !checkIfOrdersAreValid(data.cartIDs))):
       error = new Error('Please provide orderId')
       break
   }
@@ -46,7 +46,7 @@ class Order {
       const { body, user } = req
       validateOrder(body)
       const cartItems = await CartModel.findOne({ _id: {
-        $in : body.orderIds
+        $in : body.cartIDs
       }, isDeleted: false })
       if(!cartItems.length) {
         return __.send(res, 400, 'cart Items not found')
