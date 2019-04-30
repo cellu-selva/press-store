@@ -63,16 +63,17 @@ const getUser = async (userId) => {
 }
 
 class AuthClass {
-  generateAuthToken(userId) {
+  generateAuthToken(userId, rememberMe) {
     let generatedOn = new Date()
-    let token = jwt.sign({ userId: userId.toString(), generatedOn }, secretKey)
+    const expiresIn = rememberMe ? '30d' : '7d'
+    let token = jwt.sign({ userId: userId.toString(), generatedOn }, secretKey, { expiresIn })
     return token
   }
   addTokenPrefix(token) {
     return config.get('tokenPrefix') + ' ' + token
   }
-  async createSession(userId) {
-    let token = this.generateAuthToken(userId)
+  async createSession(userId, rememberMe) {
+    let token = this.generateAuthToken(userId, rememberMe)
     let inputs = {
       user: userId,
       token: token

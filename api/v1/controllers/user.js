@@ -98,7 +98,7 @@ class UserController {
         return __.send(res, 401, 'Wrong Password')
       }
       user.lastLoggedIn = new Date()
-      let session = await Auth.createSession(user._id)
+      let session = await Auth.createSession(user._id, body.rememberme)
       let token = await Auth.addTokenPrefix(session.token)
       __.success(res, { authToken: token }, 'Successfully logged in')
     } catch (error) {
