@@ -68,10 +68,10 @@ class Order {
       order = await order.save()
       let mailOptions = {
         to: "selvanathaan@gmail.com",
-        subject: `Order place - #${order._id}`,
+        subject: `Order placed - #${order._id}`,
         html: 'Hi, You\'re order has been placed successfully <br>. Click on the link below to check your order.<br/><br/><br/><br/> '
       }
-      mailOptions.html += config.get('host') + ':' + config.get('clientPort') +'/my-orders'
+      mailOptions.html += "http://"+ config.get('host') + ":" + config.get('clientPort') +"/my-orders"
       queue.createJob('sendMail', mailOptions)
       __.success(res, order, 'cart successfully created')
     } catch (error) {
