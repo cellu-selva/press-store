@@ -4,13 +4,11 @@ const nodemailer = require('nodemailer')
 const config = require('config')
 
 const transporter = nodemailer.createTransport({
-    host: config.get('mail').host,
-    port: config.get('mail').port,
-    secure: true, // true for 465, false for other ports
-    auth: {
-        user: config.get('mail').email,
-        pass: config.get('mail').password
-    }
+  service: 'gmail',
+  auth: {
+    user: 'pressato8@gmail.com',
+    pass: 'IAmBack@123'
+  }
 })
 
 class EmailClass {

@@ -115,7 +115,7 @@ class UserController {
       let user = await User.findOne(condition)
       if (user) {
         return __.send(res, 409, 'This email address is already in use')
-      }console.log(body.password)
+      }
       user = new User({
         firstName: body.firstName.trim(),
         lastName: body.lastName.trim(),
@@ -123,14 +123,14 @@ class UserController {
       })
       user.password = await user.generateHash(body.password)
       const name = `${user.firstName} ${user.lastName}`
-      user.invitationToken = Auth.generateAuthToken(user._id)
+      user.verificationToken = Auth.generateAuthToken(user._id)
       await user.save()
       let mailOptions = {
         to: user.email,
         subject: 'Welcome',
         html: 'Welcome, You\'re invited by ' + name + '. Click on the link below to activate your account.<br/><br/><br/><br/> '
       }
-      mailOptions.html += config.get('url') + '/v1/users/' + user.invitationToken + '/confirm'
+      mailOptions.html += config.get('url') + '/v1/users/' + user.verificationToken + '/confirm'
       queue.createJob('sendMail', mailOptions)
       let userData = {
         _id: user._id,
@@ -250,7 +250,7 @@ class UserController {
         return __.send(res, 400, 'Invalid Link')
       }
       let condtion = {
-        invitationToken: params.token.trim(),
+        verificationToken: params.token.trim(),
         isAdmin: false,
         isDeleted: false
       }
@@ -268,7 +268,8 @@ class UserController {
 
       let session = await Auth.createSession(user._id)
       let token = await Auth.addTokenPrefix(session.token)
-      __.success(res, { authToken: token }, 'User verified')
+      // __.success(res, { authToken: token }, 'User verified')
+      res.redirect(`http://${config.get("host")}:${config.get("clientPort")}`)
     } catch (error) {
       __.error(res, error)
     }

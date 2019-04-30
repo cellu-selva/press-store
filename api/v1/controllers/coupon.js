@@ -116,6 +116,10 @@ class Coupon {
     try {
       const { params, user } = req
       const { coupon } = params
+      const MinPurchaseToAvailShippingCost = 250
+      const response = {
+        isDeliveryFree: true
+      }
       const couponObj = await CouponModel.findOne({
         coupon,
         isDeleted: false
@@ -125,19 +129,21 @@ class Coupon {
       }
       const cartData = await CartModel.find({
         user: user._id,
-        isDeleted: false
+        isDeleted: false,
+        isBilled: false
       })
       if(!cartData.length) {
        return  __.send(res, 400, 'No items found in your cart')
       }
       let totalPrice = 0
-      let isShippingFree = false
       _.each(cartData, (item)=> {
         totalPrice += item.totalPrice
       })
-      // if(cartObj.totalPrice > MinPurchaseToAvailShippingCost) {
-      //   isShippingFree = false
-      // }
+      response.totalPrice = totalPrice
+      if(cartData.totalPrice < MinPurchaseToAvailShippingCost) {
+        response.isDeliveryFree = false
+        response.deliveryCharge = 150
+      }
       if (!couponObj.isActive) {
         return __.send(res, 400, 'Coupon expired - not active')
       }
@@ -156,7 +162,8 @@ class Coupon {
         } else {
           totalPrice = totalPrice - couponObj.maxDiscount
         }
-        return __.success(res, {totalPrice}, "coupon applied successfully")
+        response.priceAfterDiscount = totalPrice
+        return __.success(res, response, "coupon applied successfully")
       }
     } catch (error) {
       __.error(res, error)

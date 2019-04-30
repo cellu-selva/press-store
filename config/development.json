@@ -1,5 +1,6 @@
 {
   "host": "localhost",
+  "clientPort": "4200",
   "PORT": 3344,
   "url": "http://localhost:3344",
   "db": "mongodb://localhost/pro1",
