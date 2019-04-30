@@ -104,20 +104,15 @@ class Cart {
   }
   async getCartByUserId(req, res) {
     try {
-      const { params: { userId }, user } = req
-      if(!(userId || objectId.isValid(userId))) {
-        __.send(res, 400, 'Please send user id')
-      }
+      const { user } = req
       const cartObj = {
         isShippingFree: false,
         totalPrice: 0,
 
       }
-      if(!userId) {
-        userId = user._id
-      }
+      
       cartObj.carts = await CartModel.find({
-        user: userId,
+        user: user._id,
         isDeleted: false,
         isBilled: false
       })
@@ -126,7 +121,7 @@ class Cart {
       })
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
         cartObj.isShippingFree = true
-        cartObj.deliveryCharge = 1
+        cartObj.deliveryCharge = 150
       }
       __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {

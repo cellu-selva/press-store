@@ -11,7 +11,6 @@ const subscriptionSchema = Schema({
     required: 'Email is required',
     trim: true,
     lowercase: true,
-    unique: true,
     match: emailValidator
   },
   name: {
@@ -19,12 +18,10 @@ const subscriptionSchema = Schema({
     required: true
   },
   subject: {
-    type: String,
-    required: true
+    type: String
   },
   message: {
-    type: String,
-    required: true
+    type: String
   }
 }, { timestamps: true })
 

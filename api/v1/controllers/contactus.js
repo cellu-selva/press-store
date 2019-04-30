@@ -10,12 +10,6 @@ function validateMessage(data) {
     case (!(data && data.name)): 
       error = new Error('name is required')
       break
-    case (!(data && data.subject)): 
-      error = new Error('subject is required')
-      break
-    case (!(data && data.message)): 
-      error = new Error('message is required')
-      break
   }
   if(error) {
     error.status = 400

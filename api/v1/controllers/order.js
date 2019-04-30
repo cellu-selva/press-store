@@ -96,15 +96,13 @@ class Order {
   }
   async getOrderByUserId(req, res) {
     try {
-      const { params: { userId }, user } = req
-      if(!(userId || objectId.isValid(userId))) {
-        __.send(res, 400, 'Please send user id')
-      }
-      if(!userId) {
-        userId = user._id
-      }
+      const { user } = req
+      // if(!(userId || objectId.isValid(userId))) {
+      //   __.send(res, 400, 'Please send user id')
+      // }
+      
       const orders = await OrderModel.find({
-        user: userId,
+        user: user._id,
         isDeleted: false
       }).populate('address cartIds')
       __.success(res, orders, 'Orders successfully fetched')

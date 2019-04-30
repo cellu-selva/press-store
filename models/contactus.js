@@ -11,7 +11,6 @@ const contactUsSchema = Schema({
     required: 'Email is required',
     trim: true,
     lowercase: true,
-    unique: true,
     match: emailValidator
   },
   phoneNumber: {
