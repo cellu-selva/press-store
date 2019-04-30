@@ -1,6 +1,6 @@
 const ContactUsModel = require('./../../../models/contactus')
 const __ = require('../../../helpers/response')
-
+const queue = require('./../../../helpers/queue')
 function validateMessage(data) {
   let error
   switch(true) {
@@ -23,6 +23,12 @@ class ContactUs {
       validateMessage(body)
       let contactus = ContactUsModel(body)
       contactus = await contactus.save()
+      let mailOptions = {
+        to: body.email,
+        subject: `Pressato - Support`,
+        html: 'Hi, Thank you for reaching out to us. We would get back to you shortly'
+      }
+      queue.createJob('sendMail', mailOptions)
       __.success(res, contactus, 'Entry successfully created')
     } catch (error) {
       __.error(res, error)

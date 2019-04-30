@@ -1,6 +1,6 @@
 const SubscriptionModel = require('./../../../models/subscription')
 const __ = require('../../../helpers/response')
-
+const queue = require('./../../../helpers/queue')
 function validateMessage(data) {
   let error
   switch(true) {
@@ -23,6 +23,12 @@ class Subscription {
       validateMessage(body)
       let subscription = SubscriptionModel(body)
       subscription = await subscription.save()
+      let mailOptions = {
+        to: body.email,
+        subject: `Pressato - subscription`,
+        html: 'Hi, Thank you for subscribing to pressato. We would send you latest offers and new product'
+      }
+      queue.createJob('sendMail', mailOptions)
       __.success(res, subscription, 'Entry successfully created')
     } catch (error) {
       __.error(res, error)

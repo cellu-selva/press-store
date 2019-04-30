@@ -123,11 +123,8 @@ class Address {
 
   async getAddressByUser(req, res) {
     try {
-      const { params: { userId }, user } = req
-      if(!userId) {
-        userId = user._id
-      }
-      const address = await AddressModel.findOne({
+      const { user } = req
+      const address = await AddressModel.find({
         userId: user._id,
         isDeleted: false
       }).populate('userId')

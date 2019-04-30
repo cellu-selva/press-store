@@ -67,7 +67,7 @@ class Order {
       order.isDeleted = false
       order = await order.save()
       let mailOptions = {
-        to: "selvanathaan@gmail.com",
+        to: user.email,
         subject: `Order placed - #${order._id}`,
         html: 'Hi, You\'re order has been placed successfully <br>. Click on the link below to check your order.<br/><br/><br/><br/> '
       }

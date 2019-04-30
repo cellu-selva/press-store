@@ -106,9 +106,9 @@ class Cart {
     try {
       const { user } = req
       const cartObj = {
-        isShippingFree: false,
+        isShippingFree: true,
         totalPrice: 0,
-
+        deliveryCharge: 0
       }
       
       cartObj.carts = await CartModel.find({
@@ -120,7 +120,7 @@ class Cart {
         cartObj.totalPrice += item.totalPrice
       })
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
-        cartObj.isShippingFree = true
+        cartObj.isShippingFree = false
         cartObj.deliveryCharge = 150
       }
       __.success(res, cartObj, 'Cart successfully fetched')
