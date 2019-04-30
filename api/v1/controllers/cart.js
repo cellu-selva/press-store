@@ -120,7 +120,7 @@ class Cart {
         user: userId,
         isDeleted: false,
         isBilled: false
-      }).populate('user product')
+      })
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
       })
