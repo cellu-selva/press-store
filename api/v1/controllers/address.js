@@ -40,8 +40,8 @@ class Address {
   async createAddress(req, res) {
     try {
       const { body, user } = req
-      console.log(body)
       validateAddress(body)
+      body.userId = user._id
       let address = new AddressModel(body)
       address = await address.save()
       if (!user.addresses.primary) {
@@ -62,6 +62,7 @@ class Address {
       if (!body._id || (addressId != body._id)) {
         return __.send(res, 400, 'Please send an address id to update')
       }
+      body.userId = user._id
       const condition = {
         _id: addressId,
         isDeleted: false
@@ -122,11 +123,14 @@ class Address {
 
   async getAddressByUser(req, res) {
     try {
-      const { user } = req
+      const { params: { userId }, user } = req
+      if(!userId) {
+        userId = user._id
+      }
       const address = await AddressModel.findOne({
         userId: user._id,
         isDeleted: false
-      })
+      }).populate('userId')
       __.success(res, address, 'Address successfully fetched')
     } catch (error) {
       __.error(res, error)

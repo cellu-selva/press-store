@@ -39,6 +39,10 @@ const AddressSchema = Schema({
     },
     deletedAt: {
       type: Date
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
 
 }, { timestamps: true })

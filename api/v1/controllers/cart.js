@@ -104,7 +104,7 @@ class Cart {
   }
   async getCartByUserId(req, res) {
     try {
-      const { params: { userId } } = req
+      const { params: { userId }, user } = req
       if(!(userId || objectId.isValid(userId))) {
         __.send(res, 400, 'Please send user id')
       }
@@ -113,11 +113,14 @@ class Cart {
         totalPrice: 0,
 
       }
+      if(!userId) {
+        userId = user._id
+      }
       cartObj.carts = await CartModel.find({
         user: userId,
         isDeleted: false,
         isBilled: false
-      })
+      }).populate('user product')
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
       })

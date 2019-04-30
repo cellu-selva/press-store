@@ -6,7 +6,8 @@ const _ = require('lodash')
 const __ = require('../../../helpers/response')
 const OrderModel = require('../../../models/order')
 const CartModel = require('../../../models/cart')
-
+const config = require('config')
+const queue = require('./../../../helpers/queue')
 const checkIfOrdersAreValid = function(cartIDs) {
   let error = false
   _.each(cartIDs, (cartId)=> {
@@ -65,6 +66,13 @@ class Order {
       order.user = user._id
       order.isDeleted = false
       order = await order.save()
+      let mailOptions = {
+        to: "selvanathaan@gmail.com",
+        subject: `Order place - #${order._id}`,
+        html: 'Hi, You\'re order has been placed successfully <br>. Click on the link below to check your order.<br/><br/><br/><br/> '
+      }
+      mailOptions.html += config.get('host') + ':' + config.get('clientPort') +'/my-orders'
+      queue.createJob('sendMail', mailOptions)
       __.success(res, order, 'cart successfully created')
     } catch (error) {
       __.error(res, error)
@@ -88,14 +96,17 @@ class Order {
   }
   async getOrderByUserId(req, res) {
     try {
-      const { params: { userId } } = req
+      const { params: { userId }, user } = req
       if(!(userId || objectId.isValid(userId))) {
         __.send(res, 400, 'Please send user id')
+      }
+      if(!userId) {
+        userId = user._id
       }
       const orders = await OrderModel.find({
         user: userId,
         isDeleted: false
-      }).populate('address cartIds')
+      }).populate('address cartIds user')
       __.success(res, orders, 'Orders successfully fetched')
     } catch (error) {
       __.error(res, error)
