@@ -21,7 +21,7 @@ const data = [
     "isDeleted": false,
     "name": "packages",
     "code": "2",
-    "description": "no description",
+    "description": "",
     "shortDescription": "",
     "logo": "https://www.pressato.in/wp-content/uploads/2019/03/prob_crea.jpg",
     "__v": 0,

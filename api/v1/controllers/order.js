@@ -42,12 +42,13 @@ const calculatePrice = function(items) {
   return totalPrice
 }
 class Order {
-  async createOrder(req, res) {
+  async createOrder(req, res, next) {
     try {
       const { body, user } = req
-      validateOrder(body)
+      const { orderObj } = body
+      validateOrder(orderObj)
       await CartModel.update({ _id: {
-        $in : body.cartIds
+        $in : orderObj.cartIds
       }, isDeleted: false }, {
         $set: {
           isBilled: true
@@ -56,13 +57,13 @@ class Order {
         multi: true
       })
       const cartItems = await CartModel.find({ _id: {
-        $in : body.cartIds
+        $in : orderObj.cartIds
       }, isDeleted: false })
       if(!cartItems.length) {
         return __.send(res, 400, 'cart Items not found')
       }
-      body.totalPrice = calculatePrice(cartItems)
-      let order = new OrderModel(body)
+      orderObj.totalPrice = calculatePrice(cartItems)
+      let order = new OrderModel(orderObj)
       order.user = user._id
       order.isDeleted = false
       order = await order.save()
@@ -73,7 +74,8 @@ class Order {
       }
       mailOptions.html += "http://"+ config.get('host') + ":" + config.get('clientPort') +"/my-orders"
       queue.createJob('sendMail', mailOptions)
-      __.success(res, order, 'cart successfully created')
+      req.order = order
+      next()
     } catch (error) {
       __.error(res, error)
     }

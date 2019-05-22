@@ -29,6 +29,10 @@ const ProductSchema = Schema({
       required: true,
       trim: true
     },
+    volume:{
+      type: String,
+      required: true
+    },
     detailedLogo: {
       type: String,
       required: true,

@@ -3,8 +3,10 @@ const app = express.Router()
 const admin = require('../middlewares/admin')
 const auth = require('../middlewares/auth')
 const orderController = require('./../controllers/order')
+const transactionController = require('./../controllers/transaction')
 
-app.post('/order', auth.authenticate, orderController.createOrder)
+app.post('/order', auth.authenticate, transactionController.createTransaction,
+  orderController.createOrder, transactionController.updateTransaction)
 app.get('/order/user', auth.authenticate, orderController.getOrderByUserId)
 app.get('/order/:orderId', auth.authenticate, orderController.getOrderById)
 
