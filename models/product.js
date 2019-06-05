@@ -42,6 +42,10 @@ const ProductSchema = Schema({
       type: String,
       trim: true
     },
+    dressing:{
+      type: String,
+      trim: true
+    },
     goodness: {
       type: String,
       // required: true,
