@@ -19,7 +19,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, Almond milk, Guava, Chia seeds, Spirulina"
+        "ingredient": "Banana, Almond milk, Guava, Chia seeds, Spirulina",
+        "goodness": "A perfect plant-based super meal. Chia is not only easy and delicious, it is a powerhouse of nutrients. Just 2 tablespoons of chia contain almost 11 grams of fiber! That’s half of the daily recommendation of fiber intake for women! They are also full of antioxidants and omega 3 fats. Omega 3s reduce blood pressure, enhance heart health, and keep the brain healthy and sharp. On the other hand, Spirulina is an extremely nutritious blue-green alga that’s high in B vitamins and minerals like iodine, beta-carotene, antioxidants, iron, and manganese. It’s also 60% protein and a complete protein, containing all essential amino acids. And blended with almond milk, makes it an excellent source of calcium.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 222.8",
+          "Fat(g) 5.6",
+          "Carbohydrates(g) 37.4",
+          "Total Sugar(g) 17.1",
+          "Protein(g) 8.2",
+          "To be consumed on the same day of delivery",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/thalaiva-300x300.jpg",
@@ -30,7 +43,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, Milk, Whey Protein, Almonds, Cashew, Raisins, Pista, Walnuts, Figs"
+        "ingredient": "Banana, Milk, Whey Protein, Almonds, Cashew, Raisins, Pista, Walnuts, Figs",
+        "goodness": "The thought of making a protein heavy meal before you get to work or after workout, daunting? Enter the protein smoothie. There is enough evidence to support the importance of protein intake for muscle growth. With this protein smoothie you will be getting 20 grams of body awakening protein to start your day. It will keep you feeling full longer and can help you lose weight. If you are looking to increase your protein intake this is your best bet.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 132.94",
+          "Fat(g) 4.22",
+          "Carbohydrates(g) 18.19",
+          "Total Sugar(g) 12.42",
+          "Protein(g) 5.55",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/super-300x300.jpg",
@@ -41,7 +67,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, Milk, Whey Protein, Peanut Butter and Dark Chocolate"
+        "ingredient": "Banana, Milk, Whey Protein, Peanut Butter and Dark Chocolate",
+        "goodness": "The thought of making a protein heavy meal before you get to work or after workout, daunting? Enter the protein smoothie. There is enough evidence to support the importance of protein intake for muscle growth. With this protein smoothie you will be getting 20 grams of body awakening protein to start your day. It will keep you feeling full longer and can help you lose weight. Bananas in the smoothie are widely hailed as a good supply of potassium, which keeps energy levels up and electrolytes replenished especially first thing in the morning. Peanut butter, besides rounding out the flavor and the premium quality dark chocolate in the smoothie has a variety of powerful antioxidants. Antioxidants that help to get rid of free radicals, thereby preventing cell damage and slowing signs of aging.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 131.37",
+          "Fat(g) 3.97",
+          "Carbohydrates(g) 17.69",
+          "Total Sugar(g) 11.61",
+          "Protein(g) 6.22",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/rogue-300x300.jpeg",
@@ -52,7 +91,21 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, Milk, Whey Protein, Almonds, Sapota, Apple"
+        "ingredient": "Banana, Milk, Whey Protein, Almonds, Sapota, Apple",
+        "goodness": "The thought of making a protein heavy meal before you get to work or after workout, daunting? Enter the protein smoothie. There is enough evidence to support the importance of protein intake for muscle growth. With this protein smoothie you will be getting 20 grams of body awakening protein to start your day. It will keep you feeling full longer and can help you lose weight. Sapota is pleasurably sweet and is rich in dietary fiber that aids in digestion, it also contains magnesium that helps reduce blood pressure. Vitamins and antioxidants present in this delicious fruit boost immunity of the body and are also good for hair and skin. The fiber and fat in almonds help control blood sugar levels and assists in weight loss.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 136.07",
+          "Fat(g) 4.31",
+          "Carbohydrates(g) 18.97",
+          "Total Sugar(g) 11.84",
+          "Protein(g) 5.35",
+          "Weight Watchers Points: Medium",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/newyorker-300x300.jpg",
@@ -63,7 +116,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, Milk, Whey Protein, Cocoa, Dark Chocolate, Almonds"
+        "ingredient": "Banana, Milk, Whey Protein, Cocoa, Dark Chocolate, Almonds",
+        "goodness": "If you have never tasted avocado and paneer in a smoothie, you are in for a real treat. A smoothie that may almost taste like ice cream but is LOADED with nutrient-dense goodness to keep you full and satiated for hours. This will be your go-to while you power out to work. Avocados are an excellent source of B-complex vitamins; 1 cup of sliced avocados provides 40 percent of the daily recommended dietary allowance of pantothenic acid, 30 percent of folate and 29 percent of vitamin B6. Pantothenic acid aids energy and hormone production. Whey and Paneer add to your protein fix for the day. Dark Chocolate and Cocoa provide sufficient anti-oxidants that not only is healthy fix but your best desert alternative.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 137.71",
+          "Fat(g) 4.11",
+          "Carbohydrates(g) 19.1",
+          "Total Sugar(g) 11.54",
+          "Protein(g) 6.08",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/barba-300x300.jpg",
@@ -74,7 +140,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Sapotta, Avacado, Paneer, Coffee, Dates, Cocoa Powder, Milk"
+        "ingredient": "Sapotta, Avacado, Paneer, Coffee, Dates, Cocoa Powder, Milk",
+        "goodness": "This velvety smoothie is a real treat that also comes with a good trick. Hidden inside are all the healthy superfoods you need to get-up-and-go. In addition, the whey checks off your protein fix for the day. This will keep you feeling full longer and can help you lose weight.  Dark Chocolate, cocoa powder is likely to boost endorphins, the feel-good factor for good mood. It is heart-healthy and supports healthy blood pressure. On the whole, this smoothie is indulgent without being unhealthy.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 137.71",
+          "Fat(g) 4.11",
+          "Carbohydrates(g) 19.1",
+          "Total Sugar(g) 9.86",
+          "Protein(g) 10.08",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/Dyna-300x300.jpg",
@@ -85,7 +164,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Musk Melon, Papaya, Pista, Honey, Cardamom, Milk, Whey Protein"
+        "ingredient": "Musk Melon, Papaya, Pista, Honey, Cardamom, Milk, Whey Protein",
+        "goodness": "Like other melons, muskmelon is also known for its high-water content. Which means that it will help you in preventing dehydration but being packed with water content doesn’t imply that they’re short on other nutritional benefits. It is also a great choice for the weight watchers. This is because calorie wise it is less in numbers and comprises of more nutrition. Papayas on the other hand are rich sources of antioxidants and nutrients such as carotenes, vitamin C and flavonoids. It is also rich in B vitamins, folate, pantothenic acid, minerals, potassium, copper, magnesium and fiber. Due to fiber content in both musk melon and papaya this smoothie aids in controlling blood sugar levels very effectively.  Pistachios, cardamom and honey make it for an irresistible drink.  And the whey checks off your protein fix for the day.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 131.37",
+          "Fat(g) 3.97",
+          "Carbohydrates(g) 17.69",
+          "Total Sugar(g) 11.61",
+          "Protein(g) 9.22",
+          "Best before 24 hours from date of manufacture when stored Refrigerated",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/nuts-300x300.jpg",
@@ -96,7 +188,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, milk, Almonds, Pista, Walnuts, Cashews, Raisins and Figs"
+        "ingredient": "Banana, milk, Almonds, Pista, Walnuts, Cashews, Raisins and Figs",
+        "goodness": "This satisfying sipper is most likely to keep you full until lunchtime. A generous splash of whole milk adds satiating richness (and a good amount of saturated fat), but the walnuts and cashews balance with a big boost of heart-and brain-healthy omega-3 fats. Fresh raisins and figs sweeten the smoothie naturally and provide dense sources of energy, vitamins, minerals, and antioxidants. Wonderfully ripe bananas contribute to the creaminess when blended and is the ideal source of high fiber.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 98",
+          "Fat(g) 4.5",
+          "Carbohydrates(g) 11.5",
+          "Total Sugar(g) 10.6",
+          "Protein(g) 2.9",
+          "To be consumed on the same day of delivery",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/big-jo-300x300.jpg",
@@ -107,7 +212,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, milk, Peanut butter, Dark Chocolate"
+        "ingredient": "Banana, milk, Peanut butter, Dark Chocolate",
+        "goodness": "Enjoy this smoothie even as a healthy dessert option. Bananas in the smoothie are widely hailed as a good supply of potassium, which keeps energy levels up and electrolytes replenished especially first thing in the morning. Peanut butter, besides rounding out the flavor, gives a quick boost of protein to the smoothie. The premium quality dark chocolate in the smoothie has a variety of powerful antioxidants. Antioxidants that help to get rid of free radicals, thereby preventing cell damage and slowing signs of aging. Your kids and yourself will love this amazing chocolate and peanut butter smoothie.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 88",
+          "Fat(g) 3",
+          "Carbohydrates(g) 12.3",
+          "Total Sugar(g) 7.9",
+          "Protein(g) 3",
+          "To be consumed on the same day of delivery",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       },
       {
         "logo": "https://www.pressato.in/wp-content/uploads/2019/01/first-300x300.jpg",
@@ -118,7 +236,20 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "category": "5cbc830bb3fd46645082723c",
-        "ingredient": "Banana, milk, Almonds, Sapota, Apple"
+        "ingredient": "Banana, milk, Almonds, Sapota, Apple",
+        "goodness": "This is a meal-in-a-cup. This smoothie is ideal for breakfast and serves as a quick mouthful for athletes and marathon runners. Sapota is pleasurably sweet and is rich in dietary fiber that aids in digestion, it also contains magnesium that helps reduce blood pressure. Vitamins and antioxidants present in this delicious fruit boost immunity of the body and are also good for hair and skin. The fiber and fat in almonds help control blood sugar levels and assists in weight loss. The presence of simple sugar and other compounds, revitalizes the body by replenishing energy.",
+        "intention": "Our smoothies are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
+        "nutrient": [
+          "Energy(kcal) 80",
+          "Fat(g) 1.1",
+          "Carbohydrates(g) 15.2",
+          "Total Sugar(g) 9.7",
+          "Protein(g) 2.1",
+          "To be consumed on the same day of delivery",
+          "Shake Well",
+          "Serve Chilled",
+          "Portion Size: 300ml"
+        ],
       }
     ]
   },
@@ -134,16 +265,16 @@ const categories = [
         "volume": "300",
         "measuringUnit": "ml",
         "ingredient": "Tender Coconut Water, Orange, Pineapple, Sweetlime",
-        "goodness": "Intended for the summer, this drink is loaded with a selection of bright and sweet fruits. A perfect thirst quencher for a hot summers’ day! Orange, pineapple, and sweet lime, all offer a healthy dose of vitamin C while also contributing to your body’s wellness by reducing inflammation. The nutrients derived from these fruits are great for digestion and skin. A wise combination of fruits that result in just the right level of tanginess balancing your body’s electrolyte levels.",
+        "goodness": "This velvety smoothie is a real treat that also comes with a good trick. Hidden inside are all the healthy superfoods you need to get-up-and-go. In addition, the whey checks off your protein fix for the day. This will keep you feeling full longer and can help you lose weight.  Dark Chocolate, cocoa powder is likely to boost endorphins, the feel-good factor for good mood. It is heart-healthy and supports healthy blood pressure. On the whole, this smoothie is indulgent without being unhealthy.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 30.16",
           "Fat(g) 0.1",
           "Carbohydrates(g) 7.41",
           "Total Sugar(g) 6.87",
           "Protein(g) 0.13",
           "Weight Watchers Points: Medium",
-          "To be consumed on the same day of delivery",
+          "To be consume on the same day of delivery",
           "Shake Well",
           "Serve Chilled",
           "Portion Size: 300ml"
@@ -161,7 +292,7 @@ const categories = [
         "ingredient": "Activated Charcoal, Tender Coconut Water, Ginger",
         "goodness": "You are what you eat. This is must in your essential skin regime, this fine blend of activated charcoal and tender coconut water will be for your internal spa! Activated charcoal works as a toxin trapper, binding the toxins in your system and flushing them out quickly. It also alleviates gas and bloating, treats alcohol poisoning, and hangovers. It is an overall cleanse for your digestive system, and with the added goodness of tender coconut water, this drink can help you stay hydrated.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 5.52",
           "Fat (g) 0",
           "Carbohydrates (g) 1.38",
@@ -187,7 +318,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "A healthy detox drink that can help flush the toxins out of your system and replenish your body with healthy nutrients in large doses. Besides being incredibly delicious, this juice is impressively healthy with Vitamins A, K and beta carotene from the carrots, vitamin C and polyphenols from the apples, antioxidants, and folate from the beets, and anti-inflammatory benefits from the ginger. Beets come loaded with essential minerals that help promote healthy nerve and muscle function and give you great skin.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 28",
           "Fat (g) 0.1",
           "Carbohydrates (g) 5.9",
@@ -212,7 +343,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "This magic potion is loaded with various greens, including spirulina, making it an elixir, packed with superpowers to cure. It is enriched with the finest greens available in the nature’s lap such as wheat grass, lemongrass, bermuda grass, bael leaves, and many more. Pressed together, they aid in weight loss, improved digestion, blood sugar levels, and blood pressure control, restoration of hormonal balance when consumed every day.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 104",
           "Fat (g) 4",
           "Carbohydrates (g) 15",
@@ -237,7 +368,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "What better way to get on a green habit with a bunch of nutritive vegetables at hand? This drink is high in nutritive value and contains the goodness of broccoli and drumstick leaves, something new and different, in addition to other healthy greens. The high vitamin content in broccoli is known to combat diseases and acts as powerful antioxidant just like drumstick leaves. The nutrients in lettuce, celery, and cucumber aid in detoxification and promote a healthy digestive system. Capsicum, lemon and mint on the other hand is added to this drink as it encourages immunity in the body.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 12",
           "Fat (g) 0.1",
           "Carbohydrates (g) 2.2",
@@ -262,7 +393,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "Amaranth, the key ingredient in this drink is one of the top superfoods for its innumerable health benefits. This is further blended with bountiful of other wonderful greens. Amaranth is a key source of vitamins and minerals promoting overall wellness, immunity, and keeping the heart healthy. Fenugreek is a natural healer when it comes to daily issues such as stomach disorders, sore throat and inflammation. The greens in this drink contribute to detoxification and are rich in antioxidants.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 11.5",
           "Fat (g) 0",
           "Carbohydrates (g) 2.88",
@@ -287,7 +418,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "With over a kilo of vegetables pressed to extract the freshest juice, this drink is a green indulgence. Cucumber, bottle gourd, and coriander are rich in vitamin K while spinach is rich in iron. Ginger, mint, and lemon contribute as healing elements to this drink, ginger and mint being rich in anti-inflammatory properties. This drink promotes weight loss, healing of urinary tract infections and reduces inflammation of the liver. It also helps in treating problems related to digestive system like acidity and flatulence.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 14.3",
           "Fat (g) 0.1",
           "Carbohydrates (g) 3.6",
@@ -312,7 +443,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "A super food trio with innumerable benefits. This is a golden genie sent to heal your body. Benefits of turmeric is estimated to contain around 150 different therapeutic elements, including boosting your immunity, protecting your heart and moderating the effects of autoimmune diseases. Ginger on the other hand provides your body with a healing touch as it is rich in gingerol, a substance with powerful medicinal properties. Phytonutrients such as lutein and anthocyanins in carrot, join vitamins and minerals for extraordinary health-boosting potential -vitamins A, B6, C and K as some of the most beneficial and several minerals.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 31",
           "Fat (g) 0.1",
           "Carbohydrates (g) 6.9",
@@ -337,7 +468,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "A large dose of vitamin C and splash of sweetness – orange is about to be your new favorite color. Oranges are rich in vitamin C while also providing you an optimum dose of calcium. Carrots are a good source of calcium, copper, potassium and Vitamin B. They decrease the risk of heart disease and stroke. They maintain healthy vision and are high in antioxidants. Carrots also contain Vitamin C that aids the collagen production in the body.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 43.1",
           "Fat (g) 0.1",
           "Carbohydrates (g) 10.7",
@@ -362,7 +493,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "A gentle tender coconut water-based drink with a beautiful blend of fresh pomegranate, a great way to stay hydrated through the day. The juice of young tender coconuts, is nature’s solution to help replenish the potassium, other electrolytes and water that you need when dehydrated. The consumption of pomegranate juice is said to help counter-balance a diet that is heavy in fats and sugars. This combination can help protect you against infections and keep you disease-free.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 30",
           "Fat (g) 0",
           "Carbohydrates (g) 7.4",
@@ -387,7 +518,7 @@ const categories = [
         "category": "5cbc71a01df6892eaff071b1",
         "goodness": "This drink is what we’d like to call a perfect marriage between watermelon and pineapple. Kids particularly enjoy this for its freshness and sweet burst of seasonal flavor! This is an ideal, fun healthy drink to replace the carbonated drinks at your party. Watermelon is rich in antioxidants and vitamin C. It also contains several versatile nutrients such as choline and lycopene that help reduce inflammation and muscle soreness. It is a great source of hydration, and when blended with pineapple makes it a perfect light and refreshing beverage to help revitalize and cleanse your body.",
         "intention": "Our cold-pressed juices are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy (kcal) 32",
           "Fat (g) 0.1",
           "Carbohydrates (g) 7.4",
@@ -488,7 +619,7 @@ const categories = [
         "ingredient": "Yogurt, Coriander, Mint, Curry Leaves, Celery, Green Chili, Spice Mix, Himalayan Salt",
         "goodness": "This probiotic drink is loaded with good, helpful bacteria from yogurt, and a well curated selection of greens high in nutritive value and great in taste! It is also high in B vitamins, particularly vitamin B12 and riboflavin, both of which may protect against heart disease. This naturally fermented yogurt contains lots of probiotic cultures that strengthen the digestive tract. The greens in this probiotic drink help promote digestive wellness and load your body with minerals to keep infections out of the way.",
         "intention": "Our probiotics are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 78.84",
           "Fat(g) 0.52",
           "Carbohydrates(g) 13.18",
@@ -512,7 +643,7 @@ const categories = [
         "ingredient": "Yogurt, Strawberry, honey",
         "goodness": "Curd and Strawberry, these two powerful ingredients are mixed together, you reap double the skin beneficial effects. It is also high in B vitamins, particularly vitamin B12 and riboflavin, both of which may protect against heart disease. This mixture of strawberry and curd is rich in vitamin C, which can nourish your skin cells and boost the production of collagen, thereby easing away fine lines and wrinkles. Naturally fermented yogurt contains lots of probiotic cultures that strengthen the digestive tract. This drink can offer protection for bones and teeth and help prevent digestive problems.",
         "intention": "Our probiotics are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 78.84",
           "Fat(g) 0.52",
           "Carbohydrates(g) 13.18",
@@ -536,7 +667,7 @@ const categories = [
         "ingredient": "Yogurt, Mango",
         "goodness": "Mangoes have generous levels of vitamin C and vitamin A in keep the immune system healthy and strong. The fibre, potassium and vitamin content in mangoes keeps heart healthy. Yogurt on the other hand is high in B vitamins, particularly vitamin B12 and riboflavin, both of which may protect against heart disease. Together they leave an alkalizing effect and make for supple skin.Naturally fermented yogurt contains lots of probiotic cultures that strengthen the digestive tract.",
         "intention": "Our probiotics are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 78.84",
           "Fat(g) 0.52",
           "Carbohydrates(g) 13.18",
@@ -560,7 +691,7 @@ const categories = [
         "ingredient": "Yogurt, Musk Melon, Papaya, Orange, Psyllium husk",
         "goodness": "Papayas contain a healthy dose of fiber and potassium for the benefit of good cardiovascular health, vitamins A and C for skin and mucosal cell rejuvenation, and folate which contributes to cellular metabolism. Muskmelons on the other hand are rich in potassium which helps in regulating the blood pressure and keeps hypertension at bay. Oranges add the required tang and Vitamin C to the drink. Yogurt is also high in B vitamins, particularly vitamin B12 and riboflavin, both of which may protect against heart disease. Because of its excellent water solubility, psyllium husk and its resistance to digestion allows it to help regulate high cholesterol, triglycerides and blood sugar levels. It can also aid weight management and relieve diarrhea and constipation.",
         "intention": "Our probiotics are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 78.84",
           "Fat(g) 0.52",
           "Carbohydrates(g) 13.18",
@@ -590,7 +721,7 @@ const categories = [
         "dressing": "Sun Dried Tomatoes, Almond Meal, Balsamic Vinegar, Garlic, Oregano, Olive Oil",
         "goodness": "A crunchy salad with nuts and a well selected array of veggies makes this salad very enjoyable with a fun dressing. The greens in this salad, including purple cabbage, contain a handful of vital vitamins that cleanse your body of toxins and promote a healthy balance of nutrients in your body. Eating a little good fat from the dressing like the monounsaturated fat found in olive oil aids in absorption of protective phyto-chemicals (known to protect against cancer and heart disease), like lycopene from tomatoes and lutein from dark green vegetables. Peanuts and cashew nuts contribute to the required amount of protein, calcium and heart healthy fats required by your body. Sun dried tomatoes detoxify your skin and leave you feeling fresh and light.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 181.82",
           "Fat(g) 10.26",
           "Carbohydrates(g) 16.14",
@@ -617,7 +748,7 @@ const categories = [
         "dressing": "Sun Dried Tomatoes, Almond Meal, Balsamic Vinegar, Garlic, Oregano, Olive Oil",
         "goodness": "A crunchy salad with nuts and a well selected array of veggies makes this salad very enjoyable with a fun dressing. The greens in this salad, including purple cabbage, contain a handful of vital vitamins that cleanse your body of toxins and promote a healthy balance of nutrients in your body. Eating a little good fat from the dressing like the monounsaturated fat found in olive oil aids in absorption of protective phyto-chemicals (known to protect against cancer and heart disease), like lycopene from tomatoes and lutein from dark green vegetables. Peanuts and cashew nuts contribute to the required amount of protein, calcium and heart healthy fats required by your body. Sun dried tomatoes detoxify your skin and leave you feeling fresh and light.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 181.82",
           "Fat(g) 10.26",
           "Carbohydrates(g) 16.14",
@@ -642,7 +773,7 @@ const categories = [
         "dressing": "Sun Dried Tomatoes, Almond Meal, Balsamic Vinegar, Garlic, Oregano, Olive Oil",
         "goodness": "A crunchy salad with nuts and a well selected array of veggies makes this salad very enjoyable with a fun dressing. The greens in this salad, including purple cabbage, contain a handful of vital vitamins that cleanse your body of toxins and promote a healthy balance of nutrients in your body. Eating a little good fat from the dressing like the monounsaturated fat found in olive oil aids in absorption of protective phyto-chemicals (known to protect against cancer and heart disease), like lycopene from tomatoes and lutein from dark green vegetables. Peanuts and cashew nuts contribute to the required amount of protein, calcium and heart healthy fats required by your body. Sun dried tomatoes detoxify your skin and leave you feeling fresh and light",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 181.82",
           "Fat(g) 10.26",
           "Carbohydrates(g) 16.14",
@@ -669,7 +800,7 @@ const categories = [
         "dressing": "Sun Dried Tomatoes, Almond Meal, Balsamic Vinegar, Garlic, Oregano, Olive Oil",
         "goodness": "Black rice contains anthocyanin and an important antioxidant Vitamin E, which is useful in maintaining eye, skin, and immune health. The benefits of consuming a variety of vegetables can be rewarding for your body as vegetables contain nutrients like potassium, dietary fiber, folic acid, vitamin A, and vitamin C. Capsicum’s beneficial uses are numerous. It is used to alleviate – muscle cramps, sore throat, diabetes, hypotension, heart problems, gastro-intestinal problems, food poisoning, asthma and more. It also is a very efficient plant to use for enhancing metabolism, immune system skin health and treat menopausal symptoms.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 185.31",
           "Fat(g) 7.11",
           "Carbohydrates(g) 20.95",
@@ -695,7 +826,7 @@ const categories = [
         "goodness": "Black rice contains anthocyanin and an important antioxidant Vitamin E, which is useful in maintaining eye, skin, and immune health. The benefits of consuming a variety of vegetables can be rewarding for your body as vegetables contain nutrients like potassium, dietary fiber, folic acid, vitamin A, and vitamin C. Capsicum’s beneficial uses are numerous. It is used to alleviate – muscle cramps, sore throat, diabetes, hypotension, heart problems, gastro-intestinal problems, food poisoning, asthma and more. It also is a very efficient plant to use for enhancing metabolism, immune system skin health and treat menopausal symptoms.",
         "dressing": "Sun Dried Tomatoes, Almond Meal, Balsamic Vinegar, Garlic, Oregano, Olive Oil",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 185.31",
           "Fat(g) 7.11",
           "Carbohydrates(g) 20.95",
@@ -719,7 +850,7 @@ const categories = [
         "ingredient": "Black Rice, Paneer, Carrots, Bell Peppers, Onion, Cauliflower, Cashew Nuts, Biriyani Masala, Ghee, Himalayan Salt",
         "goodness": "Intended for the summer, this drink is loaded with a selection of bright and sweet fruits. A perfect thirst quencher for a hot summers’ day! Orange, pineapple, and sweet lime, all offer a healthy dose of vitamin C while also contributing to your body’s wellness by reducing inflammation. The nutrients derived from these fruits are great for digestion and skin. A wise combination of fruits that result in just the right level of tanginess balancing your body’s electrolyte levels.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 30.16",
           "Fat(g) 0.1",
           "Carbohydrates(g) 7.41",
@@ -744,7 +875,7 @@ const categories = [
         "ingredient": "Black Rice, Paneer, Carrots, Bell Peppers, Onion, Cauliflower, Cashew Nuts, Biriyani Masala, Ghee, Himalayan Salt",
         "goodness": "A healthy dose of super-foods such as black rice, cottage cheese, bell peppers, carrots, cashews and more! Black rice contains anthocyanin and an important antioxidant Vitamin E, which is useful in maintaining eye, skin, and immune health. The benefits of consuming a variety of vegetables can be rewarding for your body as vegetables contain nutrients like potassium, dietary fiber, folic acid, vitamin A, and vitamin C. Committing to eating more vegetables is one of the easiest ways to improve your health, fast.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 185.31",
           "Fat(g) 7.11",
           "Carbohydrates(g) 20.95",
@@ -769,7 +900,7 @@ const categories = [
         "ingredient": "Black Rice, Colored Capsicum, Lettuce, Chinese Cabbage, Purple Cabbage, Leeks, Feta Cheese",
         "goodness": "Black rice contains anthocyanin and an important antioxidant Vitamin E, which is useful in maintaining eye, skin, and immune health. The benefits of consuming a variety of vegetables can be rewarding for your body as vegetables contain nutrients like potassium, dietary fiber, folic acid, vitamin A, and vitamin C. Capsicum’s beneficial uses are numerous. It is used to alleviate – muscle cramps, sore throat, diabetes, hypotension, heart problems, gastro-intestinal problems, food poisoning, asthma and more. It also is a very efficient plant to use for enhancing metabolism, immune system skin health and treat menopausal symptoms.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 185.31",
           "Fat(g) 7.11",
           "Carbohydrates(g) 20.95",
@@ -794,7 +925,7 @@ const categories = [
         "ingredient": "Black Rice, Paneer, Carrots, Bell Peppers, Onion, Cauliflower, Cashew Nuts, Biriyani Masala, Ghee, Himalayan Salt",
         "goodness": "A healthy dose of super-foods such as black rice, cottage cheese, bell peppers, carrots, cashews and more! Black rice contains anthocyanin and an important antioxidant Vitamin E, which is useful in maintaining eye, skin, and immune health. The benefits of consuming a variety of vegetables can be rewarding for your body as vegetables contain nutrients like potassium, dietary fiber, folic acid, vitamin A, and vitamin C. Committing to eating more vegetables is one of the easiest ways to improve your health, fast.",
         "intention": "Our salads are composed with your nutritional needs in mind. They not only make use of the traditional ingredients for health-giving but that they also are carefully balanced to include a comprehensive collection of the nutrients your body needs for natural and traditional lifestyle.",
-        "nutrition": [
+        "nutrient": [
           "Energy(kcal) 185.31",
           "Fat(g) 7.11",
           "Carbohydrates(g) 20.95",

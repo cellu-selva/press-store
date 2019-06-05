@@ -51,7 +51,7 @@ const ProductSchema = Schema({
       // required: true,
       trim: true
     },
-    intentions: {
+    intention: {
       type: String,
       // required: true,
       trim: true
