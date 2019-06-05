@@ -8,12 +8,6 @@ const ProductSchema = Schema({
         trim: true,
         lowercase: true
     },
-    code: {
-      type: String,
-      // required: true,
-      // trim: true,
-      lowercase: true
-    },
     price: {
       type: Number,
       required: true,
@@ -31,7 +25,7 @@ const ProductSchema = Schema({
     },
     volume:{
       type: String,
-      required: true
+      // required: true
     },
     detailedLogo: {
       type: String,
