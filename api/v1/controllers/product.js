@@ -10,8 +10,11 @@ switch(true) {
   case (!data.code): 
     error = new Error("Product code cannot be empty")
     break
-  case (!data.price): 
-    error = new Error("Product price cannot be empty")
+  case (!data.actualPrice): 
+    error = new Error("Product actual Price cannot be empty")
+    break
+  case (!data.discountPrice): 
+    error = new Error("Product discount Price cannot be empty")
     break
   case (!data.description): 
     error = new Error("Product description cannot be empty")

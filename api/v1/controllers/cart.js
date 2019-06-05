@@ -34,7 +34,7 @@ class Cart {
       if(!product) {
         return __.send(res, 400, 'Product not found')
       }
-      body.totalPrice = product.price * body.quantity
+      body.totalPrice = product.discountPrice * body.quantity
       let cart = new CartModel(body)
       cart.user = user._id
       cart.isDeleted = false
