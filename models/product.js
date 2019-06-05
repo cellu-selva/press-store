@@ -8,7 +8,12 @@ const ProductSchema = Schema({
         trim: true,
         lowercase: true
     },
-    price: {
+    actualPrice: {
+      type: Number,
+      required: true,
+      default: 0
+    },
+    discountPrice: {
       type: Number,
       required: true,
       default: 0
