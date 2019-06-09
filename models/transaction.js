@@ -15,7 +15,7 @@ const TransactionSchema = Schema({
     ref: 'Order'
   },
   gateway: {
-    type: String,
+    type: Schema.Types.Mixed,
     required: true
   },
   razorData: {

@@ -3,9 +3,10 @@
 const __ = require('../../../helpers/response')
 const transactionModel = require('./../../../models/transaction')
 const UserModel = require('./../../../models/user')
-
-
-
+const rp = require('request-promise')
+const CartModel = require('./../../../models/cart')
+const _ = require('lodash')
+const config = require('config')
 function validateTransaction(transaction) {
   let error
   switch(true) {
@@ -25,9 +26,48 @@ function validateTransaction(transaction) {
 class Transaction {
   async createTransaction(req, res, next) {
     try {
+      const MinPurchaseToAvailShippingCost = 250
       const { body, user } = req
+      const cartObj = {
+        isShippingFree: true,
+        totalPrice: 0,
+        deliveryCharge: 0
+      }
+      
+      cartObj.carts = await CartModel.find({
+        user: user._id,
+        isDeleted: false,
+        isBilled: false
+      })
+      _.each(cartObj.carts, (item)=> {
+        cartObj.totalPrice += item.totalPrice
+      })
+      if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
+        cartObj.totalPrice += 150
+      }
       const { trans } = body
       validateTransaction(trans)
+      const { paymentId } = trans
+      try {
+        const razor = config.get('razor')
+        // capturing payment
+        rp({
+          method: 'POST',
+          url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
+          form: {
+            amount: cartObj.totalPrice
+          }
+        }, function (error, response, body) {
+          console.log('Status:', response.statusCode);
+          console.log('Headers:', JSON.stringify(response.headers));
+          console.log('Response:', body);
+        })
+        // fetch payment info
+        const paymentInfo = await rp(`https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}`)
+        trans.razorData = paymentInfo
+      } catch (error) {
+        console.log('Error while fetching payment detail from razor pay ::: ', error)
+      }
       trans.userId = user._id
       let transaction = new transactionModel(trans)
       transaction = await transaction.save()

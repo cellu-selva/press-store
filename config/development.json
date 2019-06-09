@@ -23,5 +23,9 @@
   },
   "elasticsearch": {
     "host": "localhost:9200"
+  },
+  "razor": {
+    "client": "rzp_test_xEABeZ1FMhgxAd",
+    "secret": "lf7yh07ou86jYV1bvXBoo1Vy"
   }
 }
