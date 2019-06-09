@@ -51,17 +51,14 @@ class Transaction {
       try {
         const razor = config.get('razor')
         // capturing payment
-        rp({
-          method: 'POST',
-          url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
-          form: {
-            amount: cartObj.totalPrice
-          }
-        }, function (error, response, body) {
-          console.log('Status:', response.statusCode);
-          console.log('Headers:', JSON.stringify(response.headers));
-          console.log('Response:', body);
-        })
+        // const paymentInfo = await rp({
+        //   method: 'POST',
+        //   url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
+        //   form: {
+        //     amount: cartObj.totalPrice
+        //   }
+        // })
+        // trans.razorData = paymentInfo
         // fetch payment info
         const paymentInfo = await rp(`https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}`)
         trans.razorData = paymentInfo
