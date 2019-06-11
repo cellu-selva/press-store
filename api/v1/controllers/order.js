@@ -41,6 +41,15 @@ const calculatePrice = function(items) {
   })
   return totalPrice * 100
 }
+
+const sendAlertMailForOrders = function(order, mailOption) {
+  const to = config.get('alertEmail')
+  if(to) {
+    mailOption.to = to
+    mailOption.html += config.get('protocol')+"://"+ config.get('host') + ":" + config.get('clientPort') +"/orders/"+ order._id
+    queue.createJob('sendMail', mailOptions)
+  }
+}
 class Order {
   async createOrder(req, res, next) {
     try {
@@ -74,6 +83,7 @@ class Order {
       }
       mailOptions.html += "http://"+ config.get('host') + ":" + config.get('clientPort') +"/my-orders"
       queue.createJob('sendMail', mailOptions)
+      sendAlertMailForOrders(order, mailOptions)
       req.order = order
       next()
     } catch (error) {
@@ -109,6 +119,19 @@ class Order {
       }).populate('address cartIds')
       __.success(res, orders, 'Orders successfully fetched')
     } catch (error) {
+      __.error(res, error)
+    }
+  }
+
+  async getAllOrders(req, res) {
+    try {
+      const { params } = req
+      const { page, limit } = params
+      const count = await OrderModel.count({})
+      const orders = await OrderModel.find({}).populate('user address').sort('-createdAt').limit(limit).skip(page*limit)
+      __.success(res, { orders, count }, 'Orders successfully fetched')
+    } catch (error) {
+      console.log(`Error while fetching orders...`, error)
       __.error(res, error)
     }
   }

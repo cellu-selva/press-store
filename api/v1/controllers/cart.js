@@ -131,6 +131,5 @@ class Cart {
   }
 }
 
-
 const obj = new Cart()
 module.exports = obj
