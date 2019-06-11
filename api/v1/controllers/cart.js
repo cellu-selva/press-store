@@ -119,9 +119,10 @@ class Cart {
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
       })
+      cartObj.totalPrice = cartObj.totalPrice * 100
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
         cartObj.isShippingFree = false
-        cartObj.deliveryCharge = 150
+        cartObj.deliveryCharge = 150 * 100
       }
       __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {

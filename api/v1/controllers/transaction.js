@@ -51,17 +51,17 @@ class Transaction {
       try {
         const razor = config.get('razor')
         // capturing payment
-        // const paymentInfo = await rp({
-        //   method: 'POST',
-        //   url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
-        //   form: {
-        //     amount: cartObj.totalPrice
-        //   }
-        // })
-        // trans.razorData = paymentInfo
-        // fetch payment info
-        const paymentInfo = await rp(`https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}`)
+        const paymentInfo = await rp({
+          method: 'POST',
+          url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
+          form: {
+            amount: cartObj.totalPrice * 100
+          }
+        })
         trans.razorData = paymentInfo
+        // fetch payment info
+        // const paymentInfo = await rp(`https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}`)
+        // trans.razorData = paymentInfo
       } catch (error) {
         console.log('Error while fetching payment detail from razor pay ::: ', error)
       }

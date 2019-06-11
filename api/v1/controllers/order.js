@@ -39,7 +39,7 @@ const calculatePrice = function(items) {
   _.each(items, (item) => {
     totalPrice += item.totalPrice
   })
-  return totalPrice
+  return totalPrice * 100
 }
 class Order {
   async createOrder(req, res, next) {
