@@ -48,7 +48,7 @@ const insertProducts =  (data) => {
 setTimeout(() => {
 
     exceltojson({
-        input: '/Users/selvanthan/workspace/learning/projects/pressato/backend/dump/pressatoProductDatabase.xlsx',
+        input: 'dump/pressatoProductDatabase.xlsx',
         sheet: "Sheet1",  // specific sheetname inside excel file (if you have multiple sheets)
         output: null,
         lowerCaseHeaders: true //to convert all excel headers to lowr case in json
