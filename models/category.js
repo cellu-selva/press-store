@@ -11,12 +11,12 @@ const CategorySchema = Schema({
     shortDescription: {
       type: String
     },
-    code: {
-      type: String,
-      required: true,
-      trim: true,
-      lowercase: true
-    },
+    // code: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    //   lowercase: true
+    // },
     description: {
       type: String,
       // required: true,
@@ -24,7 +24,7 @@ const CategorySchema = Schema({
     },
     logo: {
       type: String,
-      required: true,
+      // required: true,
       trim: true
     },
     createdBy: {

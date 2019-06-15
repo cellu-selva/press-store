@@ -39,9 +39,9 @@ const ProductSchema = Schema({
     },
     measuringUnit: {
       type: String,
-      required: true,
+      // required: true,
       trim: true,
-      enum: ['ml', 'grams', 'liter', 'kg']
+      // enum: ['ml', 'gms']
     },
     ingredient: {
       type: String,
@@ -62,7 +62,7 @@ const ProductSchema = Schema({
       trim: true
     },
     nutrient: {
-      type: Schema.Types.Mixed,
+      type: String,
       // required: true,
       trim: true
     },

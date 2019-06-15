@@ -2,7 +2,7 @@
 
 const config = require('config')
 const mongoose = require('mongoose')
-const mongodbURL = config.get('db')
+const mongodbURL = "mongodb://localhost/pro1"
 const Promise = require('bluebird')
 const redis = require('redis')
 
