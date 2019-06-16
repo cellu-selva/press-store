@@ -58,6 +58,7 @@ class Transaction {
             amount: cartObj.totalPrice * 100
           }
         })
+
         trans.razorData = paymentInfo
         // fetch payment info
         // const paymentInfo = await rp(`https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}`)

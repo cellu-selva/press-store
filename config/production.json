@@ -22,5 +22,10 @@
   },
   "elasticsearch": {
     "host": "localhost:9200"
-  }
+  },
+  "razor": {
+    "client": "",
+    "secret": ""
+  },
+  "alertEmail" : []
 }

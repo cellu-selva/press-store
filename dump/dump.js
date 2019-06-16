@@ -68,8 +68,8 @@ setTimeout(() => {
                         "isDeleted": false,
                         "name": item.categoryname,
                         "description": item.categorydescription,
-                        "shortDescription": item.categorydescription,
-                        "logo": item.categorylogo
+                        "shortDescription": item.shortdescription,
+                        "logo": item.categorylogo,                        
                     })
                 }
                 if(item.sno){

@@ -44,11 +44,11 @@ const calculatePrice = function(items) {
 
 const sendAlertMailForOrders = function(order, mailOption) {
   const to = config.get('alertEmail')
-  if(to) {
-    mailOption.to = to
+  _.each(to, (email) => {
+    mailOption.to = email
     mailOption.html += config.get('protocol')+"://"+ config.get('host') + ":" + config.get('clientPort') +"/orders/"+ order._id
     queue.createJob('sendMail', mailOptions)
-  }
+  })
 }
 class Order {
   async createOrder(req, res, next) {
