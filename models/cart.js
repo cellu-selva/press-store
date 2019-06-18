@@ -21,6 +21,11 @@ const CartSchema = Schema({
     deletedAt: {
       type: Date
     },
+    productMeta: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Product',
+      default: []
+    },
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
