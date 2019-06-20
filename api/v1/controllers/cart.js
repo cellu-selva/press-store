@@ -59,7 +59,8 @@ class Cart {
         _id: cartId,
         isDeleted: false
       }
-      const cart = await CartModel.findOneAndUpdate(condition, body, { new: true }).populate('productMeta')
+      const cart = await CartModel.findOneAndUpdate(condition, body, { new: true })
+      // .populate('productMeta')
       __.success(res, cart, 'cart successfully updated')
     } catch (error) {
       __.error(res, error)
@@ -99,7 +100,8 @@ class Cart {
       const cart = await CartModel.findOne({
         _id: cartId,
         isDeleted: false
-      }).populate('productMeta')
+      })
+      // .populate('productMeta')
       __.success(res, cart, 'cart successfully fetched')
     } catch (error) {
       __.error(res, error)
@@ -118,7 +120,8 @@ class Cart {
         user: user._id,
         isDeleted: false,
         isBilled: false
-      }).populate('productMeta')
+      })
+      // .populate('productMeta')
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
       })
