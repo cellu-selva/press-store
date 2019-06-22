@@ -6,6 +6,8 @@ const _ = require('lodash')
 const __ = require('../../../helpers/response')
 const CartModel = require('../../../models/cart')
 const ProductModel = require('../../../models/product')
+
+const util = require('./../../../helpers/util')
 const MinPurchaseToAvailShippingCost = 250
 const validateCart = (data) => {
   let error
@@ -34,7 +36,7 @@ class Cart {
       if(!product) {
         return __.send(res, 400, 'Product not found')
       }
-      body.totalPrice = product.discountPrice * body.quantity
+      body.totalPrice = util.changeToPaisa(product.discountPrice * body.quantity)
       let cart = new CartModel(body)
       cart.user = user._id
       cart.isDeleted = false
@@ -54,6 +56,8 @@ class Cart {
       if (!body._id || (cartId != body._id)) {
         return __.send(res, 400, 'Please send an cart id to update')
       }
+      const product = await ProductModel.findOne({ _id: body.product })
+      body.totalPrice = util.changeToPaisa(product.discountPrice * body.quantity)
       body.isDeleted = false
       const condition = {
         _id: cartId,
@@ -127,9 +131,9 @@ class Cart {
       })
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
         cartObj.isShippingFree = false
-        cartObj.deliveryCharge = 150 * 100
+        cartObj.deliveryCharge = util.changeToPaisa(150)
       }
-      cartObj.totalPrice = cartObj.totalPrice * 100
+      cartObj.totalPrice = util.changeToPaisa(cartObj.totalPrice)
       __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {
       __.error(res, error)

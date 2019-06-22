@@ -39,7 +39,7 @@ const calculatePrice = function(items) {
   _.each(items, (item) => {
     totalPrice += item.totalPrice
   })
-  return totalPrice * 100
+  return util.changeToPaisa(totalPrice)
 }
 
 const sendAlertMailForOrders = function(order, mailOption) {

@@ -7,6 +7,7 @@ const rp = require('request-promise')
 const CartModel = require('./../../../models/cart')
 const _ = require('lodash')
 const config = require('config')
+const util = require('./../../../helpers/util')
 function validateTransaction(transaction) {
   let error
   switch(true) {
@@ -55,7 +56,7 @@ class Transaction {
           method: 'POST',
           url: `https://${razor.client}:${razor.secret}@api.razorpay.com/v1/payments/${paymentId}/capture`,
           form: {
-            amount: cartObj.totalPrice * 100
+            amount: util.changeToPaisa(cartObj.totalPrice)
           }
         })
 
