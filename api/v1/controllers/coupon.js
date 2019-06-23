@@ -7,6 +7,7 @@ const __ = require('../../../helpers/response')
 const CouponModel = require('./../../../models/coupon')
 const CartModel = require('./../../../models/cart')
 const _ = require('lodash')
+const util = require('./../../../helpers/util')
 const validateCoupon = (data) => {
   let error
   switch (true) {
@@ -116,7 +117,7 @@ class Coupon {
     try {
       const { params, user } = req
       const { coupon } = params
-      const MinPurchaseToAvailShippingCost = 250
+      const MinPurchaseToAvailShippingCost = util.changeToPaisa(250)
       const response = {
         isDeliveryFree: true
       }
@@ -142,7 +143,8 @@ class Coupon {
       response.totalPrice = totalPrice
       if(cartData.totalPrice < MinPurchaseToAvailShippingCost) {
         response.isDeliveryFree = false
-        response.deliveryCharge = 150
+        response.deliveryCharge = util.changeToPaisa(150)
+        response.totalPrice += util.changeToPaisa(150)
       }
       if (!couponObj.isActive) {
         return __.send(res, 400, 'Coupon expired - not active')

@@ -27,7 +27,7 @@ function validateTransaction(transaction) {
 class Transaction {
   async createTransaction(req, res, next) {
     try {
-      const MinPurchaseToAvailShippingCost = 250
+      const MinPurchaseToAvailShippingCost = util.changeToPaisa(250)
       const { body, user } = req
       const cartObj = {
         isShippingFree: true,
@@ -44,7 +44,7 @@ class Transaction {
         cartObj.totalPrice += item.totalPrice
       })
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
-        cartObj.totalPrice += 150
+        cartObj.totalPrice += util.changeToPaisa(150)
       }
       const { trans } = body
       validateTransaction(trans)

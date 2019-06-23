@@ -8,6 +8,7 @@ const OrderModel = require('../../../models/order')
 const CartModel = require('../../../models/cart')
 const config = require('config')
 const queue = require('./../../../helpers/queue')
+const util = require('./../../../helpers/util')
 const checkIfOrdersAreValid = function(cartIDs) {
   let error = false
   _.each(cartIDs, (cartId)=> {

@@ -8,7 +8,7 @@ const CartModel = require('../../../models/cart')
 const ProductModel = require('../../../models/product')
 
 const util = require('./../../../helpers/util')
-const MinPurchaseToAvailShippingCost = 250
+const MinPurchaseToAvailShippingCost = util.changeToPaisa(250)
 const validateCart = (data) => {
   let error
   switch (true) {
@@ -124,16 +124,17 @@ class Cart {
         user: user._id,
         isDeleted: false,
         isBilled: false
-      })
+      }).lean()
       // .populate('productMeta')
       _.each(cartObj.carts, (item)=> {
         cartObj.totalPrice += item.totalPrice
       })
+      cartObj.price = cartObj.totalPrice
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
         cartObj.isShippingFree = false
         cartObj.deliveryCharge = util.changeToPaisa(150)
+        cartObj.totalPrice += util.changeToPaisa(150)
       }
-      cartObj.totalPrice = util.changeToPaisa(cartObj.totalPrice)
       __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {
       __.error(res, error)
