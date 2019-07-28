@@ -44,7 +44,7 @@ class Transaction {
         cartObj.totalPrice += item.totalPrice
       })
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
-        cartObj.totalPrice += util.changeToPaisa(150)
+        cartObj.totalPrice += util.changeToPaisa(30)
       }
       const { trans } = body
       validateTransaction(trans)

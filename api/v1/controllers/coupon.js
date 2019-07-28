@@ -143,8 +143,8 @@ class Coupon {
       response.totalPrice = totalPrice
       if(cartData.totalPrice < MinPurchaseToAvailShippingCost) {
         response.isDeliveryFree = false
-        response.deliveryCharge = util.changeToPaisa(150)
-        response.totalPrice += util.changeToPaisa(150)
+        response.deliveryCharge = util.changeToPaisa(30)
+        response.totalPrice += util.changeToPaisa(30)
       }
       if (!couponObj.isActive) {
         return __.send(res, 400, 'Coupon expired - not active')
