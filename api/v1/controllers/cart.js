@@ -132,8 +132,8 @@ class Cart {
       cartObj.price = cartObj.totalPrice
       if(cartObj.totalPrice < MinPurchaseToAvailShippingCost) {
         cartObj.isShippingFree = false
-        cartObj.deliveryCharge = util.changeToPaisa(150)
-        cartObj.totalPrice += util.changeToPaisa(150)
+        cartObj.deliveryCharge = util.changeToPaisa(30)
+        cartObj.totalPrice += util.changeToPaisa(30)
       }
       __.success(res, cartObj, 'Cart successfully fetched')
     } catch (error) {
