@@ -9,10 +9,8 @@ const emailValidator = [emailRegexp, 'Invalid Email']
 const UserSchema = Schema({
   email: {
     type: String,
-    required: 'Email is required',
     trim: true,
     lowercase: true,
-    unique: true,
     match: emailValidator
   },
   phoneNumber: {

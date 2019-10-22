@@ -1,6 +1,8 @@
 'use strict'
 
 const config = require('config')
+const uuidv1 = require('uuid/v1');
+
 
 const User = require('../../../models/user')
 const Auth = require('../middlewares/auth')
@@ -77,6 +79,25 @@ class UserController {
       throw error
     }
     return
+  }
+
+  async createGuestUser() {
+    try {
+      const user = new User({
+        firstName: 'guest',
+        lastName: uuidv1(),
+        isVerified: true,
+        verifiedOn: new Date()
+      })
+      user.password = await user.generateHash('test1234')
+      user.verificationToken = Auth.generateAuthToken(user._id)
+      await user.save()
+      let session = await Auth.createSession(user._id, false)
+      let token = await Auth.addTokenPrefix(session.token)
+      __.success(res, { authToken: token }, 'Successfully logged in')
+    } catch (error) {
+      __.error(res, error)
+    }
   }
   async loginHandler(req, res) {
     try {
