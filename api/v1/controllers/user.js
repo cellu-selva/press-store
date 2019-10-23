@@ -81,7 +81,7 @@ class UserController {
     return
   }
 
-  async createGuestUser() {
+  async createGuestUser(req, res) {
     try {
       const user = new User({
         firstName: 'guest',
