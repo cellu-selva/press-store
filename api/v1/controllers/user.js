@@ -99,10 +99,52 @@ class UserController {
       __.error(res, error)
     }
   }
-  async loginHandler(req, res) {
+
+  async socialLogin(req, res) {
+    const { body } = req;
+    let email = body.email.trim().toLowerCase();
+    let user = await User.findOne({ "email": email, isDeleted: false});
+    if(!user) {
+      let tempUserName = body.name ? body.name.split() : [];
+      try {
+        const user = new User({
+          firstName: tempUserName && tempUserName.length ? tempUserName[0] : body.provider,
+          lastName: tempUserName && tempUserName.length ? tempUserName[1] : uuidv1(),
+          isVerified: true,
+          verifiedOn: new Date(),
+          email: email,
+          provider: body.provider.trim().toLowerCase(),
+          providerToken: body.idToken ? body.idToken : body.token ? body.token : '',
+        });
+        user.password = await user.generateHash('test1234')
+        user.verificationToken = Auth.generateAuthToken(user._id)
+        await user.save()
+        let session = await Auth.createSession(user._id, false)
+        let token = await Auth.addTokenPrefix(session.token)
+        __.success(res, { authToken: token }, 'Successfully logged in')
+      } catch (error) {
+        __.error(res, error)
+      }
+    } else {
+      this.loginHandler(req, res, true);
+    }
+    
+  }
+
+  async loginHandler(req, res, isSocial) {
     try {
       const { body } = req
-      validateUser(body)
+      
+      if (!isSocial) {
+        validateUser(body)
+        if (!user.isVerified) {
+          return __.forbidden(res, 'Go to your mail and verify your user account')
+        }
+        let verify = user.verifyPassword(body.password)
+        if (!verify) {
+          return __.send(res, 401, 'Wrong Password')
+        }
+      }
       let condition = {
         email: body.email.trim().toLowerCase(),
         isDeleted: false
@@ -111,13 +153,8 @@ class UserController {
       if (!user) {
         return __.send(res, 400, 'email address not registered')
       }
-      if (!user.isVerified) {
-        return __.forbidden(res, 'Go to your mail and verify your user account')
-      }
-      let verify = user.verifyPassword(body.password)
-      if (!verify) {
-        return __.send(res, 401, 'Wrong Password')
-      }
+      
+      
       user.lastLoggedIn = new Date()
       let session = await Auth.createSession(user._id, body.rememberme)
       let token = await Auth.addTokenPrefix(session.token)

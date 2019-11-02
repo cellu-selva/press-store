@@ -20,6 +20,8 @@ const currentUserHandler = UserController.currentUserHandler.bind(UserController
 const signUpHandler = UserController.signUpHandler.bind(UserController)
 const verifyAccountHandler = UserController.verifyAccountHandler.bind(UserController)
 const createGuestUser = UserController.createGuestUser.bind(UserController)
+const socialLogin = UserController.socialLogin.bind(UserController)
+
 app.post('/sessions/', loginHandler)
 
 app.delete('/sessions/', authenticate, deleteSession)
@@ -43,6 +45,9 @@ app.get('/users/me', authenticate, currentUserHandler)
 app.post('/accounts', signUpHandler)
 
 app.get('/accounts/:token/verify', verifyAccountHandler)
+
 app.post('/guestUser', createGuestUser)
+
+app.post('/socialLogin', socialLogin);
 
 module.exports = app

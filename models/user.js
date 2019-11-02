@@ -59,6 +59,12 @@ const UserSchema = Schema({
   deletedOn: {
     type: Date
   },
+  provider: {
+    type: String
+  },
+  providerToken: {
+    type: String
+  },
   addresses: {
     primary: {
       type: Schema.Types.ObjectId,
