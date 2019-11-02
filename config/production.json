@@ -1,7 +1,7 @@
 {
-  "host": "localhost",
-  "PORT": 3344,
-  "url": "http://localhost:3344",
+  "host": "13.235.88.38",
+  "PORT": 4000,
+  "url": "http://13.235.88.38:3344",
   "db": "mongodb://localhost/hfs-live",
   "corsAllowedDomains": "*",
   "tokenSecret": "f@1edszlCSAy5%ÃXCVr623gjmkmslcmš21%^2scb2",
