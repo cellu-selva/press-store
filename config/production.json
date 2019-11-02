@@ -24,8 +24,8 @@
     "host": "localhost:9200"
   },
   "razor": {
-    "client": "",
-    "secret": ""
+    "client": "rzp_live_pX1OPYud5B68jy",
+    "secret": "DiU62uljMXLrlsOiSNT8ckZg"
   },
   "alertEmail" : []
 }
