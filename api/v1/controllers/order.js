@@ -84,7 +84,17 @@ class Order {
       }
       mailOptions.html += "http://"+ config.get('host') + ":" + config.get('clientPort') +"/my-orders"
       queue.createJob('sendMail', mailOptions)
-      sendAlertMailForOrders(order, mailOptions)
+      sendAlertMailForOrders(order, mailOptions);
+      /*****For admin end */
+      let adminMailOptions = {
+        to: 'Subs@pressato.in',
+        subject: `Order Received - #${ order._id }`,
+        html: `Hi, ${user.email1} has been placed an order - #${order._id} <br>. Click on the link below to check order details.<br/><br/><br/><br/> `
+      }
+      adminMailOptions.html += "http://" + config.get('host') + ":" + config.get('clientPort') + "/admin-dashboard"
+      queue.createJob('sendMail', adminMailOptions)
+      /******** */
+      
       req.order = order
       next()
     } catch (error) {
