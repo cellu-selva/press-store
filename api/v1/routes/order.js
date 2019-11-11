@@ -5,7 +5,7 @@ const auth = require('../middlewares/auth')
 const orderController = require('./../controllers/order')
 const transactionController = require('./../controllers/transaction')
 
-app.get('/order/all', orderController.getAllOrders)
+app.get('/order/all', auth.authenticate,orderController.getAllOrders)
 app.post('/order', auth.authenticate, transactionController.createTransaction,
   orderController.createOrder, transactionController.updateTransaction)
 app.get('/order/user', auth.authenticate, orderController.getOrderByUserId)

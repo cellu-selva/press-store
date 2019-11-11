@@ -126,7 +126,7 @@ class UserController {
         __.error(res, error)
       }
     } else {
-      this.loginHandler(req, res, true);
+      this.loginHandler(req, res, 'socialLogin');
     }
     
   }
@@ -135,7 +135,16 @@ class UserController {
     try {
       const { body } = req
       
-      if (!isSocial) {
+      
+      let condition = {
+        email: body.email.trim().toLowerCase(),
+        isDeleted: false
+      }
+      let user = await User.findOne(condition)
+      if (!user) {
+        return __.send(res, 400, 'email address not registered')
+      }
+      if (isSocial !== 'socialLogin') {
         validateUser(body)
         if (!user.isVerified) {
           return __.forbidden(res, 'Go to your mail and verify your user account')
@@ -145,15 +154,6 @@ class UserController {
           return __.send(res, 401, 'Wrong Password')
         }
       }
-      let condition = {
-        email: body.email.trim().toLowerCase(),
-        isDeleted: false
-      }
-      let user = await User.findOne(condition)
-      if (!user) {
-        return __.send(res, 400, 'email address not registered')
-      }
-      
       
       user.lastLoggedIn = new Date()
       let session = await Auth.createSession(user._id, body.rememberme)

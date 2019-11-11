@@ -134,9 +134,13 @@ class Order {
     }
   }
 
-  async getAllOrders(req, res) {
+  async getAllOrders(req, res, user) {
     try {
-      const { params } = req
+      const { params, user } = req
+      if(!user.isAdmin) {
+        __.send(res, 403, 'Not a authorized user');
+        return;
+      }
       const { page, limit } = params
       const count = await OrderModel.count({})
       const orders = await OrderModel.find({}).populate('user address').sort('-createdAt').limit(limit).skip(page*limit)
