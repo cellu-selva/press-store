@@ -89,7 +89,7 @@ class Order {
       let adminMailOptions = {
         to: 'Subs@pressato.in',
         subject: `Order Received - #${ order._id }`,
-        html: `Hi, ${user.email1} has been placed an order - #${order._id} <br>. Click on the link below to check order details.<br/><br/><br/><br/> `
+        html: `Hi, ${user.firstname} has placed an order - #${order._id} <br>. Click on the link below to check order details.<br/><br/><br/><br/> `
       }
       adminMailOptions.html += "http://" + config.get('host') + ":" + config.get('clientPort') + "/admin-dashboard"
       queue.createJob('sendMail', adminMailOptions)
