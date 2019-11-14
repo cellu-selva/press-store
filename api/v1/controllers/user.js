@@ -87,7 +87,8 @@ class UserController {
         firstName: 'guest',
         lastName: uuidv1(),
         isVerified: true,
-        verifiedOn: new Date()
+        verifiedOn: new Date(),
+        provider: 'guest'
       })
       user.password = await user.generateHash('test1234')
       user.verificationToken = Auth.generateAuthToken(user._id)
@@ -335,7 +336,7 @@ class UserController {
   async currentUserHandler(req, res) {
     try {
       let user = await User.findOne({ _id: req.user._id, isDeleted: false, isVerified: true }).
-        select('email phoneNumber phoneNumberExt firstName lastName account isAdmin ').
+        select('email phoneNumber phoneNumberExt firstName lastName account isAdmin provider ').
         lean()
       if (!user) {
         return __.notFound(res, 'No user found')

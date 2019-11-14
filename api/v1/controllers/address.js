@@ -3,6 +3,8 @@
 const __ = require('../../../helpers/response')
 const AddressModel = require('./../../../models/address')
 const UserModel = require('./../../../models/user')
+const PROVIDERS = {'GUEST': 'guest', 'FACEBOOK': 'facebook', 'GOOGLE': 'goolge'}
+const User = require('../../../models/user')
 const validateAddress = (data) => {
   let error
   switch (true) {
@@ -50,6 +52,11 @@ class Address {
         user.addresses.secondary.push(address._id)
       }
       user.save()
+      if(body.email && user.provider === PROVIDERS.GUEST) {
+        let condition = { _id: user.id, isDeleted: false }
+        await User.findOneAndUpdate(condition, { email: body.email.trim().toLowerCase()}, { new: true }).lean()
+      }
+      
       __.success(res, address, 'Address successfully created')
     } catch (error) {
       __.error(res, error)
