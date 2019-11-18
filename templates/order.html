@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style>
+      td {
+        padding: 5px;
+      }
+      tr:nth-child(even) {background: #CCC}
+      tr:nth-child(odd) {background: #FFF}
+    </style>
+  </head>
+  <body>
+    <h3 style="background: #109b48;padding: 10px">Order Confirmation - Order # <span style="color:white;">{{ORDERID}}</span></h3>
+    <p>Hello {{USERNAME}}</p>
+      <label>Thank you for your order. please visit Your Orders on {{DASHBOARD}}</label>
+
+      <h4> PRODUCT DETAILS</h4>
+      <hr style="width:100%">
+      <!-- <div style="width:50%;display: table;">
+        <div style="width:10%;display: table-cell">S.No</div>
+        <div style="width:40%;display: table-cell">Product</div>
+        <div style="width:25%;display: table-cell">Quantity</div>
+        <div style="width:25%;display: table-cell">Price</div>
+      </div>
+      <div style="width:50%;display: table;">
+        {{PRODUCTINFO}}
+      </div> -->
+      <table style="width:50%">
+        <thead style="text-align: left;">
+          <th>S.No</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price(₹)</th>
+        </thead>
+        <tbody>
+          {{PRODUCTINFO}}
+        </tbody>
+      </table>
+      <div style="width:50%;display:table; margin-top:20px;border:1px solid grey">
+        <div style="display:table-cell;width:30%;padding:10px"> Total - {{TOTAL}}</div>
+        <div style="display:table-cell;width:70%;padding:10px"> Payment Mode - Credit card/ Debit card/ Netbanking</div>
+      </div>
+      <hr style="width:100%">
+      <h4> BILLING DETAILS</h4>
+      <p> {{BILLINGNAME}}</p>
+      <p> {{ADDRESSLINE1}}, {{ADDRESSLINE2}}</p>
+      <p> {{CITY}}, {{STATE}} - {{PINCODE}}</p>
+      <p> Phone- {{PHONE}}</p>
+  </body>
+</html>
